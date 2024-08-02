@@ -1,0 +1,14 @@
+Error Log File for iman_celltracer, run 2023-10-19 06:26:14 for file: 
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-10-14 16HBE14 EKAR Cytokine Array\2023-10-14 16HBE14 EKAR Cytokine Array.nd2
+
+
+Error 1
+In XY Position 45, at Frame ??
+
+MATLAB:nomem - Out of memory.
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\uTrack Mods\costMatRandomDirectedSwitchingMotionLink_mp.m  - Line 377
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\uTrack Mods\linkFeaturesKalmanSparse_mp.m  - Line 334
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\uTrack Mods\trackCloseGapsKalmanSparse_mp.m  - Line 367
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_utrack_call.m  - Line 197
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 435
+Z:\imageData\SPREADs\2023-10-14 16HBE14 EKAR Cytokine Array\celltracer_v2_2023_10_14_16HBE14_EKAR2.m  - Line 232

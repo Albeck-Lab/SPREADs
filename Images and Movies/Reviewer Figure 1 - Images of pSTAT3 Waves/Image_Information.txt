@@ -1,0 +1,19 @@
+Image is from 2021-02-11 HBE1 AE Cytokines_pSTAT3_3x3.nd2 experiment.
+XY 24 (of 58)
+Cells were treated with 20ng/mL IL-1b for ~24 hrs before fixing and staining for pSTAT3.
+Scale bar is 250 um for the stitched fullsize image.
+
+For reviewer figure 1D - the scale bar is 250 um.
+For the zoomed in examples used in reviewer figure 1 E-G, the scale bars are 50 um.
+
+Dapi LUTs was scaled to 0-4500 with a gamma of 1.
+Cy5 (pSTAT3) was scaled to 250-1400 with a gamma of 1.25. 
+This was exclusively in an attempt to minimize the shading effect of each tile that we see from stitching the image and in no way affects the finding.
+
+
+For live-cell movie, same region was cropped. RFP channel luts were set to 50-4000 with a gamma of 0.5. 0.5 was to scale for heterogeneity in sensor expression for visualization and was not performed during analysis.
+
+Cropped images are of the same XY, they are just 500 pixel x 500 pixel crops, zoomed in (scale bar is 50 um for these).
+
+Tps for images are -1hr, 1 tp after tx, 5hrs, 10hr, 15hrs, and 20hrs after tx
+

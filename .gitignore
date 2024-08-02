@@ -1,0 +1,7 @@
+*.asv
+*.tif
+*.nd2
+*.avi
+*~$*.xlsx
+*.afdesign~lock~
+*.zip

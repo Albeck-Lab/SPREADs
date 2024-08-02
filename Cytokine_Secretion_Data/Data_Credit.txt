@@ -1,0 +1,1 @@
+This data is a copy of the files from the cytokine array Devan Murphy ran on HBE1 cells that were treated with IL1b. HBE1 cells were treated with IL1b, then the media supernatant was removed and tested using an elisa assay.

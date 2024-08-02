@@ -1,0 +1,475 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>Figure 6 - SPREADs and Metabolism or HC</title>
+<meta name="generator" content="MATLAB 24.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-07-25">
+<meta name="DC.source" content="SPREADS_F6_SPREADs_And_Metabolism_or_HC.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h1>Figure 6 - SPREADs and Metabolism or HC</h1>
+<!--introduction-->
+<p>Experimenting with HBE1 cells expressing the ERK-KTR ERK biosensor Determing the effects of Insulin or Glucose depervation, or treatment with hydrocortisone on the HBE1 cell's SPREAD freqency following cytokine treatment (20ng/mL IL-6 or 20 ng/mL IL-1b).</p>
+<!--/introduction-->
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Figure 6A - Showing HBE1 cells expressing both the ERK-KTR (ERK) and AMPKAR2 (AMPK) biosensors in the same cell</a>
+</li>
+<li>
+<a href="#2">Figure 6B</a>
+</li>
+<li>
+<a href="#3">process the data</a>
+</li>
+<li>
+<a href="#4">Process the Merged +/- Ins and +/- 2-DG data</a>
+</li>
+<li>
+<a href="#5">Plot the data together for Figure 6B</a>
+</li>
+<li>
+<a href="#6">Now do the same thing for Figure 6C - +/- HC</a>
+</li>
+<li>
+<a href="#7">Plot the data together for Figure 6C</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Figure 6A - Showing HBE1 cells expressing both the ERK-KTR (ERK) and AMPKAR2 (AMPK) biosensors in the same cell</h2>
+<p>Example images of HBE1 cells expressing both the ERK and AMPK biosensor were taken from the 2021-07-28 HBE1 AMPKAR ERKTR Cytokine INS OLI 2DG experiment. Random time intervals were selected for sampling. For ERK-KTR nuclear localization of signal implies low ERK activity in the cell, more cytoplasmic signal implies high ERK activity in the cell. the cells AMPKAR (aka AMPKAR2) data is psuedo colored images made by taking the ratio of CFP/YFP channels. Orange/Red color is high AMPK activity, white is low AMPK activity</p>
+<h2 id="2">Figure 6B</h2>
+<p>Combine Multiple SPREAD experiment's +/- INS and +/- 2-DG experiments</p>
+<pre class="codeinput">
+<span class="comment">% add paths</span>
+addpath(<span class="string">'Z:\Code\Image Analysis\'</span>,<span class="string">'Z:\Code\Cell Trace\'</span>,<span class="string">'Z:\Code\Nick\'</span>)
+
+<span class="comment">% Base path</span>
+baseP = <span class="string">'Z:\Processed Data\SPREADs\'</span>;
+
+<span class="comment">% Experiment 1</span>
+<span class="comment">% 2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test</span>
+dataset{1} = [baseP,<span class="string">'2021-07-28 HBE1 AMPKAR ERKTR Cytokine INS OLI 2DG\2021-07-28 HBE1 AMPKAR ERKTR Cytokine INS OLI 2DG_Processed_Copy.mat'</span>];
+
+<span class="comment">% Experiment 2</span>
+<span class="comment">% 2021-08-18 HBE1 EKAR Cytokine Array</span>
+dataset{2} = [baseP,<span class="string">'2021-08-18 HBE1 AE Cyto INS 2DG OLI\2021-08-18 HBE1 AE Cyto INS 2DG OLI_Processed_Copy.mat'</span>];
+
+<span class="comment">% collect the data from the respective experiments</span>
+data1 = convertSPREADToDataframe2(dataset, <span class="string">'ERKTR'</span>, <span class="string">'tmaxaftertx'</span>,24,<span class="string">'aftertx'</span>,2,<span class="string">'exclude'</span>,{<span class="string">'EGF'</span>,<span class="string">'LPS'</span>,<span class="string">'Oli'</span>});
+</pre>
+<h2 id="3">process the data</h2>
+<p>make a copy of the data</p>
+<pre class="codeinput">data2 = data1;
+
+<span class="comment">% shorten the names for simplicity</span>
+data2.txinfo = strrep(data2.txinfo,<span class="string">' 0 '</span>,<span class="string">''</span>);
+data2.txinfo = strrep(data2.txinfo,<span class="string">' 1 vehicle'</span>,<span class="string">' + Veh'</span>);
+data2.txinfo = strrep(data2.txinfo,<span class="string">' 5mM TwoDG'</span>,<span class="string">' 10mM TwoDG'</span>); <span class="comment">% fix the platemap mistake in labeling</span>
+data2.txinfo = strrep(data2.txinfo,<span class="string">'+ Veh + Veh'</span>,<span class="string">'+ Veh'</span>);<span class="comment">% delete repeat tx names</span>
+no10 = ~contains(data2.txinfo,<span class="string">'10ng/mL'</span>); <span class="comment">% only need the 20ng/mL data</span>
+data3 = data2(no10,:);
+no2dg = ~contains(data3.txinfo,(<span class="string">'1 NOINS'</span> + wildcardPattern + <span class="string">'10mM TwoDG'</span>)); <span class="comment">% exclude no ins 2dg</span>
+data3 = data3(no2dg,:);
+
+<span class="comment">% simplify the names for ease of use</span>
+data3.txinfo = strrep(data3.txinfo,<span class="string">'1 fim'</span>,<span class="string">'Ins'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'1 NOINS'</span>,<span class="string">'No Ins'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">' 10mM TwoDG'</span>,<span class="string">' + 2DG'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'20ng/mL '</span>,<span class="string">'+ '</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'1b + Veh'</span>,<span class="string">'1b'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'6 + Veh'</span>,<span class="string">'6'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'Ins + IL1b + 2DG'</span>,<span class="string">'Ins+2DG + IL1b'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'Ins + IL6 + 2DG'</span>,<span class="string">'Ins+2DG + IL6'</span>);
+data3.txinfo = strrep(data3.txinfo,<span class="string">'Ins + Veh + 2DG'</span>,<span class="string">'Ins+2DG + Veh'</span>);
+
+<span class="comment">% get the cytokines for grouping</span>
+data3.txinfo = categorical(data3.txinfo,{<span class="string">'No Ins + Veh'</span>, <span class="string">'Ins + Veh'</span>, <span class="string">'Ins+2DG + Veh'</span>, <span class="string">'No Ins + IL6'</span>, <span class="string">'Ins + IL6'</span>, <span class="string">'Ins+2DG + IL6'</span>,<span class="string">'No Ins + IL1b'</span>, <span class="string">'Ins + IL1b'</span>, <span class="string">'Ins+2DG + IL1b'</span>});
+</pre>
+<h2 id="4">Process the Merged +/- Ins and +/- 2-DG data</h2>
+<p>For reference: 1 fim = 10 ug/mL Insulin containing imaging media 1 NOINS = insulin deprived cells</p>
+<pre class="codeinput">fig6Stats = grpstats(data3,<span class="string">"txinfo"</span>,[<span class="string">"mean"</span>,<span class="string">"median"</span>,<span class="string">"sem"</span>],<span class="string">"DataVars"</span>,[<span class="string">"freq"</span>,<span class="string">"dur"</span>,<span class="string">"area"</span>]);
+[~,~,stats] = anova1(data3.freq,data3.txinfo,<span class="string">'off'</span>);
+
+<span class="comment">% See which are significantly different versus control (+ ins)</span>
+[resultsC,~,~,gnamesC] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(matches(stats.gnames,<span class="string">'Ins + Veh'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTblC = array2table(resultsC,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTblC.(<span class="string">"Group"</span>) = gnamesC(resultsTblC.(<span class="string">"Group"</span>));
+resultsTblC.(<span class="string">"Control Group"</span>) = gnamesC(resultsTblC.(<span class="string">"Control Group"</span>))
+
+<span class="comment">% See which are different from 20 ng/mL IL-6</span>
+[results6,~,~,gnames6] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(matches(stats.gnames,<span class="string">'Ins + IL6'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTbl6 = array2table(results6,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTbl6.(<span class="string">"Group"</span>) = gnames6(resultsTbl6.(<span class="string">"Group"</span>));
+resultsTbl6.(<span class="string">"Control Group"</span>) = gnames6(resultsTbl6.(<span class="string">"Control Group"</span>))
+
+<span class="comment">% See which are different from 20 ng/mL IL-1b</span>
+[results1b,~,~,gnames1b] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(matches(stats.gnames,<span class="string">'Ins + IL1b'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTbl1b = array2table(results1b,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTbl1b.(<span class="string">"Group"</span>) = gnames1b(resultsTbl1b.(<span class="string">"Group"</span>));
+resultsTbl1b.(<span class="string">"Control Group"</span>) = gnames1b(resultsTbl1b.(<span class="string">"Control Group"</span>))
+</pre>
+<pre class="codeoutput">
+resultsTblC =
+
+  8&times;6 table
+
+          Group           Control Group    Lower Limit    Difference    Upper Limit     P-value  
+    __________________    _____________    ___________    __________    ___________    __________
+
+    {'No Ins + Veh'  }    {'Ins + Veh'}      -4.8793       -2.5386       -0.19784        0.029125
+    {'Ins+2DG + Veh' }    {'Ins + Veh'}      -2.5109       -0.1702         2.1705               1
+    {'No Ins + IL6'  }    {'Ins + Veh'}      -1.5901       0.75065         3.0914         0.92145
+    {'Ins + IL6'     }    {'Ins + Veh'}       2.6146        4.9553          7.296      1.1574e-05
+    {'Ins+2DG + IL6' }    {'Ins + Veh'}       -1.532        0.8087         3.1494         0.89052
+    {'No Ins + IL1b' }    {'Ins + Veh'}      -1.5966       0.74416         3.0849          0.9246
+    {'Ins + IL1b'    }    {'Ins + Veh'}       1.6815        4.0222         6.3629      0.00031885
+    {'Ins+2DG + IL1b'}    {'Ins + Veh'}     -0.58789        1.7528         4.0936         0.21108
+
+
+resultsTbl6 =
+
+  8&times;6 table
+
+          Group           Control Group    Lower Limit    Difference    Upper Limit     P-value  
+    __________________    _____________    ___________    __________    ___________    __________
+
+    {'No Ins + Veh'  }    {'Ins + IL6'}      -9.8351        -7.4939       -5.1526      6.2493e-10
+    {'Ins + Veh'     }    {'Ins + IL6'}      -7.2966        -4.9553        -2.614      1.7503e-05
+    {'Ins+2DG + Veh' }    {'Ins + IL6'}      -7.4668        -5.1255       -2.7842      9.6795e-06
+    {'No Ins + IL6'  }    {'Ins + IL6'}      -6.5459        -4.2046       -1.8634      0.00017396
+    {'Ins+2DG + IL6' }    {'Ins + IL6'}      -6.4879        -4.1466       -1.8053      0.00019392
+    {'No Ins + IL1b' }    {'Ins + IL6'}      -6.5524        -4.2111       -1.8699      0.00019224
+    {'Ins + IL1b'    }    {'Ins + IL6'}      -3.2744       -0.93308        1.4082         0.80712
+    {'Ins+2DG + IL1b'}    {'Ins + IL6'}      -5.5437        -3.2024      -0.86117       0.0040775
+
+
+resultsTbl1b =
+
+  8&times;6 table
+
+          Group           Control Group     Lower Limit    Difference    Upper Limit     P-value  
+    __________________    ______________    ___________    __________    ___________    __________
+
+    {'No Ins + Veh'  }    {'Ins + IL1b'}      -8.9016       -6.5608          -4.22      1.4237e-07
+    {'Ins + Veh'     }    {'Ins + IL1b'}       -6.363       -4.0222        -1.6814      0.00029049
+    {'Ins+2DG + Veh' }    {'Ins + IL1b'}      -6.5332       -4.1924        -1.8516      0.00017255
+    {'No Ins + IL6'  }    {'Ins + IL1b'}      -5.6124       -3.2716       -0.93076       0.0033258
+    {'Ins + IL6'     }    {'Ins + IL1b'}      -1.4077       0.93308         3.2739         0.80711
+    {'Ins+2DG + IL6' }    {'Ins + IL1b'}      -5.5543       -3.2135       -0.87271       0.0039478
+    {'No Ins + IL1b' }    {'Ins + IL1b'}      -5.6188        -3.278       -0.93725       0.0032282
+    {'Ins+2DG + IL1b'}    {'Ins + IL1b'}      -4.6101       -2.2694       0.071439        0.060456
+
+</pre>
+<h2 id="5">Plot the data together for Figure 6B</h2>
+<pre class="codeinput">figgy = figure;
+bar(fig6Stats.txinfo,fig6Stats.mean_freq,<span class="keyword">...</span>
+    <span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="keyword">...</span>
+    <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1.5);
+hold <span class="string">on</span>;
+<span class="comment">% plot the data</span>
+errorbar(fig6Stats.txinfo,fig6Stats.mean_freq,fig6Stats.sem_freq,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1.5,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% add the error bar</span>
+plot(fig6Stats.txinfo,fig6Stats.median_freq,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% add the median</span>
+xticklabels({<span class="string">'No Ins + Veh'</span>,<span class="string">'Ins + Veh'</span>,<span class="string">'Ins + 2DG'</span>,<span class="string">'No Ins + IL6'</span>,<span class="string">'Ins + IL6'</span>, <span class="string">'IL6 + Ins + 2DG'</span>,<span class="string">'No Ins + IL1b'</span>,<span class="string">'Ins + IL1b'</span>, <span class="string">'IL1b + Ins + 2DG'</span>}) <span class="comment">% simplify the x tick labels</span>
+ylim([0, 11]) <span class="comment">% set the y axis limits</span>
+ylabel(<span class="string">'SPREAD Frequency'</span>);
+hold <span class="string">off</span>;
+
+<span class="comment">% standardize the figure for printing</span>
+figgy.Units = <span class="string">"inches"</span>;
+fontname(figgy,<span class="string">"Arial"</span>); fontsize(figgy,8,<span class="string">"points"</span>) <span class="comment">% make the font 8 pt and arial</span>
+figgy.Position = [0.5,0.5,8.5,3];
+ax = gca;
+ax.Units = <span class="string">"inches"</span>;
+ax.Position = [1.1,0.56,3,2];
+
+saveas(figgy,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6B_Cyto_INS_2DG.fig'</span>)
+saveas(figgy,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6B_Cyto_INS_2DG.svg'</span>)
+</pre>
+<img vspace="5" hspace="5" src="SPREADS_F6_SPREADs_And_Metabolism_or_HC_01.png" alt=""> <h2 id="6">Now do the same thing for Figure 6C - +/- HC</h2>
+<pre class="codeinput">
+<span class="comment">% 2022-08-18 HBE1 EKAR Cyto HC</span>
+
+<span class="comment">% Load the SPREAD frequency data</span>
+d6C = readtable(<span class="string">'Z:\imageData\SPREADs\2022-08-18 HBE1 EKAR Cyto HC\Figures\keep\EKAR Spread freq before 24 hours excluding EGF bar v2_data.xls'</span>);
+
+<span class="comment">% exclude the IFN data (bad IFN)</span>
+d6C = d6C(~contains(d6C.origin,<span class="string">'IFN'</span>),:);
+
+<span class="comment">% set the order for txs</span>
+d6C.txinfo = categorical(d6C.origin,{<span class="string">'NO-HC+vehicle'</span>,<span class="string">'f-im+vehicle'</span>,<span class="string">'NO-HC+TNFa20ng mL'</span>,<span class="string">'f-im+TNFa20ng mL'</span>,<span class="string">'NO-HC+IL620ng mL'</span>,<span class="string">'f-im+IL620ng mL'</span>,<span class="string">'NO-HC+IL1b20ng mL'</span>,<span class="string">'f-im+IL1b20ng mL'</span>},{<span class="string">'No HC + Veh'</span>, <span class="string">'HC + Veh'</span>, <span class="string">'No HC + TNFa'</span>, <span class="string">'HC + TNFa'</span>,  <span class="string">'No HC + IL6'</span>, <span class="string">'HC + IL6'</span>, <span class="string">'No HC + IL1b'</span>, <span class="string">'HC + IL1b'</span>});
+</pre>
+<h2 id="7">Plot the data together for Figure 6C</h2>
+<pre class="codeinput">figgy = figure;
+bar(d6C.txinfo,d6C.mean_data,<span class="keyword">...</span>
+    <span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="keyword">...</span>
+    <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1.5);
+hold <span class="string">on</span>;
+<span class="comment">% plot the data</span>
+errorbar(d6C.txinfo,d6C.mean_data,d6C.sem_data,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1.5,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% add the error bar</span>
+plot(d6C.txinfo,d6C.median_data,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% add the median</span>
+ylim([0, 15]) <span class="comment">% set the y axis limits</span>
+ylabel(<span class="string">'SPREAD Frequency'</span>);
+hold <span class="string">off</span>;
+
+<span class="comment">% standardize the figure for printing</span>
+figgy.Units = <span class="string">"inches"</span>;
+fontname(figgy,<span class="string">"Arial"</span>); fontsize(figgy,8,<span class="string">"points"</span>) <span class="comment">% make the font 8 pt and arial</span>
+figgy.Position = [0.5,0.5,8.5,3];
+ax = gca;
+ax.Units = <span class="string">"inches"</span>;
+ax.Position = [1.1,0.56,3,2]
+
+saveas(figgy,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6C_Cyto_HC.fig'</span>)
+saveas(figgy,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6C_Cyto_HC.svg'</span>)
+</pre>
+<pre class="codeoutput">
+ax = 
+
+  Axes with properties:
+
+             XLim: [No HC + Veh    HC + IL1b]
+             YLim: [0 15]
+           XScale: 'linear'
+           YScale: 'linear'
+    GridLineStyle: '-'
+         Position: [1.1000 0.5600 3.0000 2]
+            Units: 'inches'
+
+  Use GET to show all properties
+
+</pre>
+<img vspace="5" hspace="5" src="SPREADS_F6_SPREADs_And_Metabolism_or_HC_02.png" alt=""> <p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Figure 6 - SPREADs and Metabolism or HC
+% Experimenting with HBE1 cells expressing the ERK-KTR ERK biosensor
+% Determing the effects of Insulin or Glucose depervation, or treatment with hydrocortisone on the HBE1 cell's SPREAD freqency 
+% following cytokine treatment (20ng/mL IL-6 or 20 ng/mL IL-1b).
+
+%% Figure 6A - Showing HBE1 cells expressing both the ERK-KTR (ERK) and AMPKAR2 (AMPK) biosensors in the same cell
+% Example images of HBE1 cells expressing both the ERK and AMPK biosensor were taken from the 2021-07-28
+% HBE1 AMPKAR ERKTR Cytokine INS OLI 2DG experiment. Random time intervals were selected for sampling.  
+% For ERK-KTR nuclear localization of signal implies low ERK activity in the cell, more cytoplasmic signal 
+% implies high ERK activity in the cell.
+% the cells AMPKAR (aka AMPKAR2) data is psuedo colored images made by taking the ratio of CFP/YFP channels. 
+% Orange/Red color is high AMPK activity, white is low AMPK activity
+
+%% Figure 6B 
+% Combine Multiple SPREAD experiment's +/- INS and +/- 2-DG experiments
+
+% add paths
+addpath('Z:\Code\Image Analysis\','Z:\Code\Cell Trace\','Z:\Code\Nick\')
+
+% Base path
+baseP = 'Z:\Processed Data\SPREADs\';
+
+% Experiment 1
+% 2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test
+dataset{1} = [baseP,'2021-07-28 HBE1 AMPKAR ERKTR Cytokine INS OLI 2DG\2021-07-28 HBE1 AMPKAR ERKTR Cytokine INS OLI 2DG_Processed_Copy.mat'];
+
+% Experiment 2
+% 2021-08-18 HBE1 EKAR Cytokine Array
+dataset{2} = [baseP,'2021-08-18 HBE1 AE Cyto INS 2DG OLI\2021-08-18 HBE1 AE Cyto INS 2DG OLI_Processed_Copy.mat'];
+
+% collect the data from the respective experiments
+data1 = convertSPREADToDataframe2(dataset, 'ERKTR', 'tmaxaftertx',24,'aftertx',2,'exclude',{'EGF','LPS','Oli'});
+%% process the data
+% make a copy of the data 
+data2 = data1;
+
+% shorten the names for simplicity
+data2.txinfo = strrep(data2.txinfo,' 0 ','');
+data2.txinfo = strrep(data2.txinfo,' 1 vehicle',' + Veh');
+data2.txinfo = strrep(data2.txinfo,' 5mM TwoDG',' 10mM TwoDG'); % fix the platemap mistake in labeling
+data2.txinfo = strrep(data2.txinfo,'+ Veh + Veh','+ Veh');% delete repeat tx names
+no10 = ~contains(data2.txinfo,'10ng/mL'); % only need the 20ng/mL data
+data3 = data2(no10,:);
+no2dg = ~contains(data3.txinfo,('1 NOINS' + wildcardPattern + '10mM TwoDG')); % exclude no ins 2dg
+data3 = data3(no2dg,:);
+
+% simplify the names for ease of use
+data3.txinfo = strrep(data3.txinfo,'1 fim','Ins');
+data3.txinfo = strrep(data3.txinfo,'1 NOINS','No Ins');
+data3.txinfo = strrep(data3.txinfo,' 10mM TwoDG',' + 2DG');
+data3.txinfo = strrep(data3.txinfo,'20ng/mL ','+ ');
+data3.txinfo = strrep(data3.txinfo,'1b + Veh','1b');
+data3.txinfo = strrep(data3.txinfo,'6 + Veh','6');
+data3.txinfo = strrep(data3.txinfo,'Ins + IL1b + 2DG','Ins+2DG + IL1b');
+data3.txinfo = strrep(data3.txinfo,'Ins + IL6 + 2DG','Ins+2DG + IL6');
+data3.txinfo = strrep(data3.txinfo,'Ins + Veh + 2DG','Ins+2DG + Veh');
+
+% get the cytokines for grouping
+data3.txinfo = categorical(data3.txinfo,{'No Ins + Veh', 'Ins + Veh', 'Ins+2DG + Veh', 'No Ins + IL6', 'Ins + IL6', 'Ins+2DG + IL6','No Ins + IL1b', 'Ins + IL1b', 'Ins+2DG + IL1b'});
+
+%% Process the Merged +/- Ins and +/- 2-DG data
+% For reference: 
+% 1 fim = 10 ug/mL Insulin containing imaging media
+% 1 NOINS = insulin deprived cells
+
+fig6Stats = grpstats(data3,"txinfo",["mean","median","sem"],"DataVars",["freq","dur","area"]);
+[~,~,stats] = anova1(data3.freq,data3.txinfo,'off');
+
+% See which are significantly different versus control (+ ins)
+[resultsC,~,~,gnamesC] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(matches(stats.gnames,'Ins + Veh')),'Display','off'); 
+resultsTblC = array2table(resultsC,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblC.("Group") = gnamesC(resultsTblC.("Group"));
+resultsTblC.("Control Group") = gnamesC(resultsTblC.("Control Group"))
+
+% See which are different from 20 ng/mL IL-6
+[results6,~,~,gnames6] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(matches(stats.gnames,'Ins + IL6')),'Display','off'); 
+resultsTbl6 = array2table(results6,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTbl6.("Group") = gnames6(resultsTbl6.("Group"));
+resultsTbl6.("Control Group") = gnames6(resultsTbl6.("Control Group"))
+
+% See which are different from 20 ng/mL IL-1b
+[results1b,~,~,gnames1b] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(matches(stats.gnames,'Ins + IL1b')),'Display','off'); 
+resultsTbl1b = array2table(results1b,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTbl1b.("Group") = gnames1b(resultsTbl1b.("Group"));
+resultsTbl1b.("Control Group") = gnames1b(resultsTbl1b.("Control Group"))
+
+%% Plot the data together for Figure 6B
+
+figgy = figure;
+bar(fig6Stats.txinfo,fig6Stats.mean_freq,...
+    'FaceColor',[0.75,0.75,0.75],...
+    'EdgeColor','k', 'LineWidth',1.5);
+hold on;
+% plot the data
+errorbar(fig6Stats.txinfo,fig6Stats.mean_freq,fig6Stats.sem_freq,'.','vertical','Color','k','LineWidth', 1.5,'MarkerSize', 1); % add the error bar
+plot(fig6Stats.txinfo,fig6Stats.median_freq,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % add the median
+xticklabels({'No Ins + Veh','Ins + Veh','Ins + 2DG','No Ins + IL6','Ins + IL6', 'IL6 + Ins + 2DG','No Ins + IL1b','Ins + IL1b', 'IL1b + Ins + 2DG'}) % simplify the x tick labels
+ylim([0, 11]) % set the y axis limits
+ylabel('SPREAD Frequency');
+hold off;
+
+% standardize the figure for printing
+figgy.Units = "inches";
+fontname(figgy,"Arial"); fontsize(figgy,8,"points") % make the font 8 pt and arial 
+figgy.Position = [0.5,0.5,8.5,3];
+ax = gca;
+ax.Units = "inches";
+ax.Position = [1.1,0.56,3,2];
+
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6B_Cyto_INS_2DG.fig')
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6B_Cyto_INS_2DG.svg')
+
+
+%% Now do the same thing for Figure 6C - +/- HC
+
+% 2022-08-18 HBE1 EKAR Cyto HC
+
+% Load the SPREAD frequency data
+d6C = readtable('Z:\imageData\SPREADs\2022-08-18 HBE1 EKAR Cyto HC\Figures\keep\EKAR Spread freq before 24 hours excluding EGF bar v2_data.xls');
+
+% exclude the IFN data (bad IFN)
+d6C = d6C(~contains(d6C.origin,'IFN'),:);
+
+% set the order for txs
+d6C.txinfo = categorical(d6C.origin,{'NO-HC+vehicle','f-im+vehicle','NO-HC+TNFa20ng mL','f-im+TNFa20ng mL','NO-HC+IL620ng mL','f-im+IL620ng mL','NO-HC+IL1b20ng mL','f-im+IL1b20ng mL'},{'No HC + Veh', 'HC + Veh', 'No HC + TNFa', 'HC + TNFa',  'No HC + IL6', 'HC + IL6', 'No HC + IL1b', 'HC + IL1b'});
+
+%% Plot the data together for Figure 6C
+
+figgy = figure;
+bar(d6C.txinfo,d6C.mean_data,...
+    'FaceColor',[0.75,0.75,0.75],...
+    'EdgeColor','k', 'LineWidth',1.5);
+hold on;
+% plot the data
+errorbar(d6C.txinfo,d6C.mean_data,d6C.sem_data,'.','vertical','Color','k','LineWidth', 1.5,'MarkerSize', 1); % add the error bar
+plot(d6C.txinfo,d6C.median_data,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % add the median
+ylim([0, 15]) % set the y axis limits
+ylabel('SPREAD Frequency');
+hold off;
+
+% standardize the figure for printing
+figgy.Units = "inches";
+fontname(figgy,"Arial"); fontsize(figgy,8,"points") % make the font 8 pt and arial 
+figgy.Position = [0.5,0.5,8.5,3];
+ax = gca;
+ax.Units = "inches";
+ax.Position = [1.1,0.56,3,2]
+
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6C_Cyto_HC.fig')
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6C_Cyto_HC.svg')
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

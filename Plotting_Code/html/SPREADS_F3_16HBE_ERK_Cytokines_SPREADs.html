@@ -1,0 +1,341 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>SPREADS_F3_16HBE_ERK_Cytokines_SPREADs</title>
+<meta name="generator" content="MATLAB 24.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-07-25">
+<meta name="DC.source" content="SPREADS_F3_16HBE_ERK_Cytokines_SPREADs.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Figure 3 - 16HBE cells</a>
+</li>
+<li>
+<a href="#2">Extra Info Part 2: plot percent of 16HBE ERK responders by treatment</a>
+</li>
+<li>
+<a href="#3">Extra Info Part 2: plot duration of 16HBE ERK response by treatment</a>
+</li>
+<li>
+<a href="#4">Extra Info Part 3: plot the frequency of 16HBE ERK pulses by treatment</a>
+</li>
+<li>
+<a href="#5">Extra Info Part 4: plot each 16HBE cell's mean ERK pulse duration by treatment</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Figure 3 - 16HBE cells</h2>
+<pre class="codeinput">
+<span class="comment">% Figure 3 A-G and Figure E4 A-K</span>
+<span class="comment">% Cytokine treatment groups and Single Cytokine treatment plots</span>
+<span class="comment">% Mean and Heatmap plots are from 2023-10-14 16HBE14 EKAR Cytokine Array experiment</span>
+<span class="comment">% For Heatmaps - A random 100 of the longest ERK tracks from each condition were plotted</span>
+<span class="comment">%</span>
+
+<span class="comment">% add the paths</span>
+addpath(<span class="string">'Z:\Code\Nick'</span>,<span class="string">'Z:\Code\Cell Trace'</span>,<span class="string">'Z:\Code\Image Analysis'</span>,<span class="string">'Z:\Code\ARCOS-MATLAB\Source'</span>)
+
+<span class="comment">% add the base folder for all data</span>
+baseFold = <span class="string">'Z:\Processed Data\SPREADs\'</span>;
+
+<span class="comment">% Extra Info - 16HBE ERK response</span>
+
+<span class="comment">% 2023-08-09 16HBE14</span>
+fig4{1} = [baseFold, <span class="string">'2023-08-09 16hbe14 EKAR Cyto Gef Toc\2023-08-09 16hbe14 EKAR Cyto Gef Toc_Processed.mat'</span>];
+
+<span class="comment">% 2023-10-14 16HBE14</span>
+fig4{2} = [baseFold, <span class="string">'2023-10-14 16HBE14 EKAR Cytokine Array\2023-10-14 16HBE14 EKAR Cytokine Array_Processed.mat'</span>];
+
+<span class="comment">% pull pulse analysis from the data</span>
+pars = {<span class="string">'Responder'</span>,<span class="string">'Delta_Mean'</span>,<span class="string">'Frequency'</span>,<span class="string">'Mean_Dur'</span>,<span class="string">'DurFirstP'</span>}; <span class="comment">% parameters to collect</span>
+expar = {<span class="string">'Cell'</span>,<span class="string">'Tx1'</span>,<span class="string">'Tx2'</span>}; <span class="comment">% treatments to consider</span>
+paDF = convertPulseToDataframe(fig4,{<span class="string">'EKAR'</span>},<span class="string">'aftertx'</span>,2,<span class="string">'tmaxaftertx'</span>,24,<span class="string">'pulsepars'</span>,pars,<span class="string">'expar'</span>,expar,<span class="string">'exclude'</span>,{<span class="string">'Simvastatin'</span>,<span class="string">'Gef'</span>,<span class="string">'Toc'</span>,<span class="string">'PD'</span>,<span class="string">'ERKi'</span>},<span class="string">'responderdelta'</span>,0.07,<span class="string">'respondermaxtx'</span>,0.5);
+paDF.treatment = strrep(paDF.treatment,<span class="string">' at hour 0'</span>,<span class="string">''</span>); <span class="comment">% remove the "at hour 0" from the treatment names for better labeling</span>
+
+<span class="comment">% make treatments a categorical but keep the order the data is in</span>
+txs = unique(paDF.treatment,<span class="string">'stable'</span>); paDF.treatment = categorical(paDF.treatment,txs);
+
+<span class="comment">% get the statistical data</span>
+fig4Stats = grpstats(paDF, <span class="string">"treatment"</span>,[<span class="string">"mean"</span>,<span class="string">"median"</span>,<span class="string">"sem"</span>,<span class="string">"std"</span>],<span class="string">"DataVars"</span>,[<span class="string">"EKAR_Frequency"</span>,<span class="string">"EKAR_Mean_Dur"</span>,<span class="string">"EKAR_DurFirstP"</span>])
+</pre>
+<pre class="codeoutput">Warning: Unable to obtain a change notification handle for
+\\albecklab.mcb.ucdavis.edu\data\Code\Cell Trace. 
+</pre>
+<pre class="codeoutput error">Error using fieldnames
+Invalid input argument of type 'double'. Input must be a structure or a Java or COM object.
+
+Error in ct_maptx (line 44)
+par = intersect(p.expar, fieldnames(idx), 'stable');  nep = numel(par);
+
+Error in convertPulseToDataframe&gt;makePADF (line 184)
+mappedTxs = ct_maptx(dataloc.platemapd.idx,'expar',p.expar,'reduce',p.reduce); % map the platemap
+
+Error in convertPulseToDataframe (line 98)
+        [paDFhold, txDFhold, ifDFhold, meanDFhold] = makePADF(dHold, channel, p); % make the pulse analysis dataframe
+
+Error in SPREADS_F3_16HBE_ERK_Cytokines_SPREADs (line 26)
+paDF = convertPulseToDataframe(fig4,{'EKAR'},'aftertx',2,'tmaxaftertx',24,'pulsepars',pars,'expar',expar,'exclude',{'Simvastatin','Gef','Toc','PD','ERKi'},'responderdelta',0.07,'respondermaxtx',0.5);
+</pre>
+<h2 id="2">Extra Info Part 2: plot percent of 16HBE ERK responders by treatment</h2>
+<pre class="codeinput">
+<span class="comment">%pull the subset of data that has reponder data (is not nan)</span>
+responderz = paDF(~isnan(paDF.EKAR_Responder),:);
+
+<span class="comment">% Calculate the count of all entries per treatment group</span>
+totalCount = groupsummary(responderz,<span class="string">'treatment'</span>);
+
+<span class="comment">% Calculate the count of responders (true) per treatment group</span>
+responderCount = groupsummary(responderz(responderz.EKAR_Responder==1,:), <span class="string">'treatment'</span>);
+
+<span class="comment">% Calculate the percentage of responders for each treatment group</span>
+percResponders = join(responderCount,totalCount,<span class="string">'Keys'</span>,<span class="string">'treatment'</span>);
+percResponders.PercResponders = (percResponders.GroupCount_responderCount ./ percResponders.GroupCount_totalCount) * 100;
+
+<span class="comment">% Make the % responders bar graph</span>
+percFig = figure;
+y = bar(percResponders.treatment,percResponders.PercResponders,<span class="string">'LineWidth'</span>,1);
+xlabel(<span class="string">'Treatment'</span>); ylabel(<span class="string">'% ERK responders to treatment'</span>); <span class="comment">% add labels and set font sizes</span>
+
+<span class="comment">% maybe add number of cells that went into the % caculations?</span>
+ytips = y.YEndPoints;
+labels1 = string(percResponders.GroupCount_totalCount);
+labels1 = strcat(<span class="string">"n = "</span>, labels1);
+text(percResponders.treatment,ytips,labels1,<span class="string">'HorizontalAlignment'</span>,<span class="string">'center'</span>,<span class="keyword">...</span>
+    <span class="string">'VerticalAlignment'</span>,<span class="string">'bottom'</span>)
+
+<span class="comment">% assert font style and size</span>
+fontname(percFig,<span class="string">"Arial"</span>); fontsize(percFig,8,<span class="string">'points'</span>); ylim([0,110]);
+
+<span class="comment">% set the figure to inches</span>
+percFig.Units = <span class="string">"inches"</span>;
+</pre>
+<h2 id="3">Extra Info Part 2: plot duration of 16HBE ERK response by treatment</h2>
+<pre class="codeinput">figure;
+boxchart(paDF.treatment,paDF.EKAR_Frequency,<span class="string">'Notch'</span>,<span class="string">'on'</span>,<span class="string">'JitterOutliers'</span>,<span class="string">'on'</span>,<span class="string">'MarkerStyle'</span>,<span class="string">'None'</span>,<span class="string">'LineWidth'</span>,1);
+xlabel(<span class="string">'Treatment'</span>); ylabel(<span class="string">'ERK Pulse Frequency per cell'</span>); <span class="comment">% add labels and set font sizes</span>
+fontname(gcf,<span class="string">"Arial"</span>); fontsize(gcf,8,<span class="string">'points'</span>);
+
+<span class="comment">% do 1way anova of frequency compared to the control</span>
+[~,~,stats] = anova1(paDF.EKAR_Frequency,paDF.treatment,<span class="string">'off'</span>);
+[results,~,~,gnames] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(stats.gnames,<span class="string">'1 vehicle'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+ERKpulseFreqStats = array2table(results,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+ERKpulseFreqStats.(<span class="string">"Group"</span>) = gnames(ERKpulseFreqStats.(<span class="string">"Group"</span>));
+ERKpulseFreqStats.(<span class="string">"Control Group"</span>) = gnames(ERKpulseFreqStats.(<span class="string">"Control Group"</span>));
+</pre>
+<h2 id="4">Extra Info Part 3: plot the frequency of 16HBE ERK pulses by treatment</h2>
+<pre class="codeinput">figure;
+boxchart(paDF.treatment,paDF.EKAR_Frequency,<span class="string">'Notch'</span>,<span class="string">'on'</span>,<span class="string">'JitterOutliers'</span>,<span class="string">'on'</span>,<span class="string">'MarkerStyle'</span>,<span class="string">'None'</span>,<span class="string">'LineWidth'</span>,1);
+xlabel(<span class="string">'Treatment'</span>); ylabel(<span class="string">'ERK Pulse Frequency per cell'</span>); <span class="comment">% add labels and set font sizes</span>
+fontname(gcf,<span class="string">"Arial"</span>); fontsize(gcf,8,<span class="string">'points'</span>); ylim([0,1.25]);
+
+<span class="comment">% do 1way anova of frequency compared to the control</span>
+[~,~,stats] = anova1(paDF.EKAR_Frequency,paDF.treatment,<span class="string">'off'</span>);
+[results,~,~,gnames] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(gnames,<span class="string">'1 vehicle'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+ERKpulseFreqStats = array2table(results,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+ERKpulseFreqStats.(<span class="string">"Group"</span>) = gnames(ERKpulseFreqStats.(<span class="string">"Group"</span>));
+ERKpulseFreqStats.(<span class="string">"Control Group"</span>) = gnames(ERKpulseFreqStats.(<span class="string">"Control Group"</span>));
+</pre>
+<h2 id="5">Extra Info Part 4: plot each 16HBE cell's mean ERK pulse duration by treatment</h2>
+<pre class="codeinput">figure;
+boxchart(paDF.treatment,paDF.EKAR_Mean_Dur*60,<span class="string">'Notch'</span>,<span class="string">'on'</span>,<span class="string">'JitterOutliers'</span>,<span class="string">'on'</span>,<span class="string">'MarkerStyle'</span>,<span class="string">'None'</span>,<span class="string">'LineWidth'</span>,1);
+xlabel(<span class="string">'Treatment'</span>); ylabel(<span class="string">'ERK pulse duration in minutes (average duration per cell)'</span>); <span class="comment">% add labels and set font sizes</span>
+fontname(gcf,<span class="string">"Arial"</span>); fontsize(gcf,8,<span class="string">'points'</span>); ylim([0,75])
+
+<span class="comment">% do 1way anova of mean pulse duration compared to the control</span>
+[~,~,stats] = anova1(paDF.EKAR_Mean_Dur,paDF.treatment,<span class="string">'off'</span>);
+[results,~,~,gnames] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(gnames,<span class="string">'1 vehicle'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+ERKpulseDurStats = array2table(results,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+ERKpulseDurStats.(<span class="string">"Group"</span>) = gnames(ERKpulseDurStats.(<span class="string">"Group"</span>));
+ERKpulseDurStats.(<span class="string">"Control Group"</span>) = gnames(ERKpulseDurStats.(<span class="string">"Control Group"</span>));
+</pre>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Figure 3 - 16HBE cells
+
+% Figure 3 A-G and Figure E4 A-K
+% Cytokine treatment groups and Single Cytokine treatment plots
+% Mean and Heatmap plots are from 2023-10-14 16HBE14 EKAR Cytokine Array experiment
+% For Heatmaps - A random 100 of the longest ERK tracks from each condition were plotted
+%
+
+% add the paths
+addpath('Z:\Code\Nick','Z:\Code\Cell Trace','Z:\Code\Image Analysis','Z:\Code\ARCOS-MATLAB\Source')
+
+% add the base folder for all data
+baseFold = 'Z:\Processed Data\SPREADs\';
+
+% Extra Info - 16HBE ERK response
+
+% 2023-08-09 16HBE14
+fig4{1} = [baseFold, '2023-08-09 16hbe14 EKAR Cyto Gef Toc\2023-08-09 16hbe14 EKAR Cyto Gef Toc_Processed.mat'];
+
+% 2023-10-14 16HBE14
+fig4{2} = [baseFold, '2023-10-14 16HBE14 EKAR Cytokine Array\2023-10-14 16HBE14 EKAR Cytokine Array_Processed.mat'];
+
+% pull pulse analysis from the data
+pars = {'Responder','Delta_Mean','Frequency','Mean_Dur','DurFirstP'}; % parameters to collect
+expar = {'Cell','Tx1','Tx2'}; % treatments to consider
+paDF = convertPulseToDataframe(fig4,{'EKAR'},'aftertx',2,'tmaxaftertx',24,'pulsepars',pars,'expar',expar,'exclude',{'Simvastatin','Gef','Toc','PD','ERKi'},'responderdelta',0.07,'respondermaxtx',0.5);
+paDF.treatment = strrep(paDF.treatment,' at hour 0',''); % remove the "at hour 0" from the treatment names for better labeling
+
+% make treatments a categorical but keep the order the data is in
+txs = unique(paDF.treatment,'stable'); paDF.treatment = categorical(paDF.treatment,txs);
+
+% get the statistical data
+fig4Stats = grpstats(paDF, "treatment",["mean","median","sem","std"],"DataVars",["EKAR_Frequency","EKAR_Mean_Dur","EKAR_DurFirstP"])
+
+%% Extra Info Part 2: plot percent of 16HBE ERK responders by treatment
+
+%pull the subset of data that has reponder data (is not nan)
+responderz = paDF(~isnan(paDF.EKAR_Responder),:);
+
+% Calculate the count of all entries per treatment group
+totalCount = groupsummary(responderz,'treatment');
+
+% Calculate the count of responders (true) per treatment group
+responderCount = groupsummary(responderz(responderz.EKAR_Responder==1,:), 'treatment');
+
+% Calculate the percentage of responders for each treatment group
+percResponders = join(responderCount,totalCount,'Keys','treatment');
+percResponders.PercResponders = (percResponders.GroupCount_responderCount ./ percResponders.GroupCount_totalCount) * 100;
+
+% Make the % responders bar graph
+percFig = figure;
+y = bar(percResponders.treatment,percResponders.PercResponders,'LineWidth',1);
+xlabel('Treatment'); ylabel('% ERK responders to treatment'); % add labels and set font sizes
+
+% maybe add number of cells that went into the % caculations?
+ytips = y.YEndPoints;
+labels1 = string(percResponders.GroupCount_totalCount);
+labels1 = strcat("n = ", labels1);
+text(percResponders.treatment,ytips,labels1,'HorizontalAlignment','center',...
+    'VerticalAlignment','bottom')
+
+% assert font style and size
+fontname(percFig,"Arial"); fontsize(percFig,8,'points'); ylim([0,110]);
+
+% set the figure to inches
+percFig.Units = "inches";
+
+%% Extra Info Part 2: plot duration of 16HBE ERK response by treatment
+figure;
+boxchart(paDF.treatment,paDF.EKAR_Frequency,'Notch','on','JitterOutliers','on','MarkerStyle','None','LineWidth',1);
+xlabel('Treatment'); ylabel('ERK Pulse Frequency per cell'); % add labels and set font sizes
+fontname(gcf,"Arial"); fontsize(gcf,8,'points');
+
+% do 1way anova of frequency compared to the control
+[~,~,stats] = anova1(paDF.EKAR_Frequency,paDF.treatment,'off');
+[results,~,~,gnames] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(stats.gnames,'1 vehicle')),'Display','off'); 
+ERKpulseFreqStats = array2table(results,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+ERKpulseFreqStats.("Group") = gnames(ERKpulseFreqStats.("Group"));
+ERKpulseFreqStats.("Control Group") = gnames(ERKpulseFreqStats.("Control Group"));
+
+%% Extra Info Part 3: plot the frequency of 16HBE ERK pulses by treatment
+figure;
+boxchart(paDF.treatment,paDF.EKAR_Frequency,'Notch','on','JitterOutliers','on','MarkerStyle','None','LineWidth',1);
+xlabel('Treatment'); ylabel('ERK Pulse Frequency per cell'); % add labels and set font sizes
+fontname(gcf,"Arial"); fontsize(gcf,8,'points'); ylim([0,1.25]);
+
+% do 1way anova of frequency compared to the control
+[~,~,stats] = anova1(paDF.EKAR_Frequency,paDF.treatment,'off');
+[results,~,~,gnames] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(gnames,'1 vehicle')),'Display','off'); 
+ERKpulseFreqStats = array2table(results,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+ERKpulseFreqStats.("Group") = gnames(ERKpulseFreqStats.("Group"));
+ERKpulseFreqStats.("Control Group") = gnames(ERKpulseFreqStats.("Control Group"));
+
+%% Extra Info Part 4: plot each 16HBE cell's mean ERK pulse duration by treatment
+figure;
+boxchart(paDF.treatment,paDF.EKAR_Mean_Dur*60,'Notch','on','JitterOutliers','on','MarkerStyle','None','LineWidth',1);
+xlabel('Treatment'); ylabel('ERK pulse duration in minutes (average duration per cell)'); % add labels and set font sizes
+fontname(gcf,"Arial"); fontsize(gcf,8,'points'); ylim([0,75])
+
+% do 1way anova of mean pulse duration compared to the control
+[~,~,stats] = anova1(paDF.EKAR_Mean_Dur,paDF.treatment,'off');
+[results,~,~,gnames] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(gnames,'1 vehicle')),'Display','off'); 
+ERKpulseDurStats = array2table(results,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+ERKpulseDurStats.("Group") = gnames(ERKpulseDurStats.("Group"));
+ERKpulseDurStats.("Control Group") = gnames(ERKpulseDurStats.("Control Group"));
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>
