@@ -7,7 +7,7 @@
  By: Nicholaus DeCuzzi, Daniel Oberbauer, Kenneth J. Chmiel,  Michael Pargett, Justa M. Ferguson, Devan Murphy, Amir A. Zeki, John G. Albeck.
 
  Biorxiv Pre-print (02/2024):
- https://www.biorxiv.org/content/10.1101/2024.02.03.578773v1
+ https://www.biorxiv.org/content/10.1101/2024.02.03.578773v2
 
  This code has dependencies available on the Albeck Lab github (https://github.com/orgs/Albeck-Lab/repositories), including:
  - Arcos-Matlab
