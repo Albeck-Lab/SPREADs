@@ -1,0 +1,424 @@
+---
+title: "HBE1 bulk RNAseq / Within-sample gene comparison"
+author: "Marion Hardy"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true 
+    theme: spacelab 
+    highlight: monochrome
+editor_options: 
+  chunk_output_type: console
+  markdown: 
+    wrap: 72
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(message = FALSE, cache = TRUE, echo = FALSE, warning = F, cache.lazy = F)
+knitr::opts_chunk$set(fig.width=6, fig.height=8) 
+
+library(biomaRt)
+library(RColorBrewer)
+library(DESeq2)
+library(tidyverse)
+library(kableExtra)
+library(msigdbr)
+library(clusterProfiler)
+
+# to run this script, you should create two subfolders:
+# data, in which you would put the hsapiens_annotations_oct2024.rds object
+# data_output, in which you would put the dds_ctrl.Rds object
+
+```
+
+```{r Data loading, include=FALSE}
+
+dds = readRDS("./data_output/dds_ctrl.Rds")
+
+```
+
+# Introduction
+
+In this report we are looking at the HBE1 control treatment replicates.
+We are checking gene expression within these samples. We'd like to
+explore whether or not HBE1 cells express cytokine-related receptors (or
+receptor subunits). Nick specified that our interest should focus on
+these cytokines:
+
+-   GROa / CXCL1
+
+-   IL17a
+
+-   IL6
+
+-   IL8
+
+-   MCP1
+
+-   MIP3a
+
+# Normalizing data using FPKM
+
+CPM normalization is suitable to within-sample comparison but does not
+take into account gene length. RPKM normalization is deprecated as a
+within-sample comparison method, the author of the method favors FPKM.
+DESeq2, although made for differential expression analysis, includes an
+fpkm normalization function.
+
+## Getting the number of base pairs per genes
+
+```{r, echo=TRUE, include=TRUE,eval=FALSE }
+
+# listDatasets(useMart("ensembl"))
+
+# load human genome annotation dataset
+
+mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
+
+# listAttributes(mart) # lets me know that there's a "transcript length" attribute
+
+ensembl_to_geneName <- getBM(attributes = c("ensembl_gene_id",
+                                            "ensembl_gene_id_version",
+                                            "external_gene_name",
+                                            "entrezgene_id","description",
+                                            "transcript_start",
+                                            "transcript_end",
+                                            "transcript_length"),
+                             mart = mart)
+names(ensembl_to_geneName) <- c("ensembl","ensembl_version", "gene", "ENTREZID", 
+                                "description","RNA_start","RNA_end","RNA_length")
+ensembl_to_geneName$gene = sub("^$", NA, ensembl_to_geneName$gene) 
+head(ensembl_to_geneName)
+
+saveRDS(ensembl_to_geneName,"./data/hsapiens_annotations_oct2024.rds")
+
+```
+
+```{r}
+
+ensembl_to_geneName = readRDS("./data/hsapiens_annotations_oct2024.rds")
+
+```
+
+
+## Annotating our DESeq2 object
+
+```{r}
+
+DfToAppend = ensembl_to_geneName %>% 
+  dplyr::select(ensembl, RNA_start,RNA_end) %>% 
+  filter(ensembl%in%rownames(dds)) %>% 
+  distinct(ensembl, .keep_all = T)
+
+# For some reason, biomart ENSG do not contain 411 ENSG found in the data.
+# I'll isolate these genes, filter the current data set and query what they're involved in
+# Update: They are not relevant to our question
+
+`%ni%` = Negate(`%in%`)
+
+NotAnnotatable = dds[which(rownames(dds)%ni%DfToAppend$ensembl),]
+
+# Filtering the current dds object
+
+TbExcluded = which(rownames(dds)%ni%DfToAppend$ensembl)
+
+ddsf = dds[which(rownames(dds)%in%DfToAppend$ensembl),] 
+
+# Ordering the df to append ranges with the row order of the counts
+# So that the range metadata matches each of the genes in the count matrix
+
+DfToAppend = left_join(data.frame(ensembl = rownames(counts(ddsf))),
+                       DfToAppend, by = "ensembl")
+rownames(DfToAppend) = DfToAppend$ensembl
+
+ObjToAppend =
+  makeGRangesFromDataFrame(DfToAppend,
+                         keep.extra.columns=FALSE,
+                         ignore.strand=T,
+                         seqinfo=NULL,
+                         seqnames.field="ensembl",
+                         start.field="RNA_start",
+                         end.field=c("RNA_end"),
+                         starts.in.df.are.0based=FALSE)
+
+
+rowRanges(ddsf) = ObjToAppend 
+
+```
+
+This sections adds the transcripts lengths and coordinates to the DESeq2
+object, as GRanges objects.
+
+## Normalizing the DESeq2 object
+
+```{r, include=T}
+
+data = fpkm(ddsf, robust = TRUE) # normalizing with fpkm
+
+data = as.data.frame(data)
+data$ensembl = rownames(counts(ddsf))
+
+data_ctrl =
+  data %>%  
+  select(AZHBE01,AZHBE02,AZHBE03) # selecting the ctrl conditions only
+
+data_ctrl =
+  data_ctrl %>% 
+    rowwise() %>% 
+    mutate(Avrg_FPKM=mean(c(AZHBE01,AZHBE02,AZHBE03)), # averaging the scores over the replicates
+           sd_FPKM=sd(c(AZHBE01,AZHBE02,AZHBE03))) %>% 
+  select(Avrg_FPKM, sd_FPKM) %>% 
+  as.data.frame()
+
+rownames(data_ctrl) = rownames(data)
+
+data_ctrl =
+  data_ctrl %>% 
+  filter(Avrg_FPKM>0) # keeping the expressed transcripts only
+
+nrow(data_ctrl) # there are 18 667 expressed transcripts
+
+```
+
+There are 18667 transcripts expressed in these cells.
+
+## Over-representation analysis of the control HBE1 conditions
+
+```{r}
+
+data_ctrl$ensembl = rownames(data_ctrl)
+annot = distinct(ensembl_to_geneName, ensembl,.keep_all = T)
+data_ctrl = left_join(data_ctrl, annot)
+
+```
+
+```{r}
+
+# MsigDb
+
+hsa_GOBP_sets <- msigdbr(
+  species = "Homo sapiens", 
+  category = "C5",
+  subcategory = "GO:BP")
+
+hsa_reactome_sets <- msigdbr(
+  species = "Homo sapiens", 
+  category = "C2",
+  subcategory = "CP:REACTOME") # for reactome collection
+
+set.seed(054057) # for reproducibility
+
+```
+
+```{r}
+
+temp =
+  data_ctrl %>% 
+  drop_na()
+
+QueriedGenes = temp$gene
+
+```
+
+### GO:Biological Processes
+
+```{r, fig.height = 6, fig.width = 7}
+
+ora_results = enricher(
+  gene = QueriedGenes, 
+  pvalueCutoff = 0.05, 
+  pAdjustMethod = "BH", 
+  minGSSize = 10,
+  TERM2GENE = dplyr::select(
+    hsa_GOBP_sets,
+    gs_name,
+    gene_symbol
+  )
+)
+
+ora_results %>%
+  as_tibble() %>%
+  select(ID, GeneRatio,	p.adjust,	qvalue) %>%
+  knitr::kable()%>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(width = "1000px", height = "500px")
+
+dim(ora_results)
+
+```
+
+#### Filtered for relevant terms
+.
+.
+.
+
+
+```{r, fig.height = 6, fig.width = 7}
+
+# Determined the relevant signaling pathways by fancily doin ctrl+f "Signaling"
+
+GOBP_of_interest =  c("GOBP_CELL_CELL_SIGNALING_BY_WNT",
+                        "GOBP_I_KAPPAB_KINASE_NF_KAPPAB_SIGNALING",
+                        "GOBP_TUMOR_NECROSIS_FACTOR_MEDIATED_SIGNALING_PATHWAY",
+                        "GOBP_TRANSFORMING_GROWTH_FACTOR_BETA_RECEPTOR_SIGNALING_PATHWAY",
+                        "GOBP_PLATELET_DERIVED_GROWTH_FACTOR_RECEPTOR_SIGNALING_PATHWAY",
+                        "GOBP_REGULATION_OF_TYPE_I_INTERFERON_MEDIATED_SIGNALING_PATHWAY")
+
+ora_results %>% 
+  filter(ora_results@result$ID %in% GOBP_of_interest) %>% 
+  dotplot(showCategory = 30, font.size = 7)+ 
+  labs(title = "Over-representation analysis",
+              subtitle = " Filtered cytokine-involved processes")+
+   theme(axis.line = element_line(color='black'),
+    plot.background = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank())
+
+ora_results %>%
+  as_tibble() %>%
+  select(ID, GeneRatio,	p.adjust,	qvalue, geneID) %>%
+  filter(ID %in% GOBP_of_interest) %>% 
+  knitr::kable() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(width = "1000px", height = "250px")
+
+dim(ora_results)
+
+```
+
+### Reactome
+
+```{r, fig.height = 6, fig.width = 7}
+
+ora_results = enricher(
+  gene = QueriedGenes, 
+  pvalueCutoff = 0.05, 
+  pAdjustMethod = "BH", 
+  minGSSize = 10,
+  TERM2GENE = dplyr::select(
+    hsa_reactome_sets,
+    gs_name,
+    gene_symbol
+  )
+)
+
+ora_results %>%
+  as_tibble() %>%
+  select(ID, GeneRatio,	p.adjust,	qvalue) %>%
+  knitr::kable()%>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(width = "1000px", height = "500px")
+
+dim(ora_results)
+
+```
+
+#### Filtered for relevant terms
+.
+.
+.
+
+
+```{r, fig.height = 6, fig.width = 7}
+
+# Determined the relevant signaling pathways by fancily doin ctrl+f "Signaling"
+
+Reactome_of_interest =  c("REACTOME_ERK_MAPK_TARGETS",
+                          "REACTOME_SIGNALING_BY_TGF_BETA_RECEPTOR_COMPLEX",
+                          "REACTOME_DOWNSTREAM_SIGNALING_EVENTS_OF_B_CELL_RECEPTOR_BCR",
+                          "REACTOME_TGF_BETA_RECEPTOR_SIGNALING_ACTIVATES_SMADS",
+                          "REACTOME_TGF_BETA_RECEPTOR_SIGNALING_IN_EMT_EPITHELIAL_TO_MESENCHYMAL_TRANSITION",
+                          "REACTOME_INTERLEUKIN_1_SIGNALING",
+                          "REACTOME_INTERLEUKIN_1_FAMILY_SIGNALING",
+                          "REACTOME_SIGNALING_BY_TGFB_FAMILY_MEMBERS",
+                          "REACTOME_SIGNALING_BY_EGFR",
+                          "REACTOME_MAPK6_MAPK4_SIGNALING",
+                          "REACTOME_INTERLEUKIN_17_SIGNALING",
+                          "REACTOME_SIGNALING_BY_VEGF",
+                          "REACTOME_SIGNALING_BY_PTK6",
+                          "REACTOME_TNF_SIGNALING",
+                          "REACTOME_TNFR1_INDUCED_NFKAPPAB_SIGNALING_PATHWAY",
+                          "REACTOME_TOLL_LIKE_RECEPTOR_TLR1_TLR2_CASCADE",
+                          "REACTOME_MYD88_INDEPENDENT_TLR4_CASCADE")
+
+ora_results %>% 
+  filter(ora_results@result$ID %in% Reactome_of_interest) %>% 
+  dotplot(showCategory = 30, font.size = 7)+ 
+  labs(title = "Over-representation analysis",
+              subtitle = " Filtered cytokine-involved processes")+
+   theme(axis.line = element_line(color='black'),
+    plot.background = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank())
+
+ora_results %>%
+  as_tibble() %>%
+  select(ID, GeneRatio,	p.adjust,	qvalue, geneID) %>%
+  filter(ID %in% Reactome_of_interest) %>% 
+  knitr::kable() %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>% 
+  scroll_box(width = "1000px", height = "350px")
+
+dim(ora_results)
+
+```
+
+# What I've found to be expressed in HBE1, control
+
+-   GROa / CXCL1: CXCR1 and CXCR2 are expressed (CXCR1 in 1/3 samples, CXCR2 in 2 out of 3)
+
+-   IL17a: IL17RA-E are expressed
+
+-   IL6: IL6ST, a signal transducer, is expressed
+
+-   IL8: CXCR1 and CXCR2 are expressed (CXCR1 in 1/3 samples, CXCR2 in 2 out of 3)
+
+-   MCP1: is known to activate NFkB and ERK signaling, which both
+    express lots of transcripts (cfr reactome results)
+
+-   MIP3a / CCL6: CCR6 is not expressed but there is known crosstalk
+    with the IL17 pathway and the TLRs (cfr reactome results)
+
+
+NB: CCR4, CCR6 are not expressed in any samples, their count is at 0 across conditions.
+
+```{r,include=TRUE}
+
+ToI = c("CXCL1","CXCL2","CXCL3","CXCL6","CXCL11","CXCL14","CXCL16","CXCL17",
+        "TNFRSF1A","TNFRSF2A","TRAP1","TRAF7","IL17RA","IL17RB","IL17RC","IL17RD",
+        "IL17RE","IL6ST", "CXCR1","CXCR2","IL6R",
+        "TGFBR1","TGFBR1","BAMBI","IL1R1","IL1RB","IL1RN","CD14","NRP1","NRP2","KDR",
+        "VEGFR2","FLT1","VEGFA","VEGFB","VEGFD","AXL",
+        "TNFRSF1A","EGFR")
+
+data_ctrl %>% 
+  filter(gene%in%ToI) %>% 
+  select(gene, Avrg_FPKM, sd_FPKM) %>% 
+  arrange(gene) %>% 
+  kableExtra::kbl() %>% 
+  kable_paper(full_width = F) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed",
+                                      "responsive")) 
+
+```
+
+My additions to cytokines of interest which I have found receptors for:
+
+-   TNFa: TNFRSF1A, TNFRSF2A
+-   IL1: IL1R1, IL1RB, IL1RN
+-   TGFb: TGFBR1, TGBR2, BAMBI
+-   LPS: CD14
+-   VEGF: NRP1, NRP2, KDR, VEGFR2, FLT1, VEGFA, VEGFB, VEGFD
+-   GAS6: AXL
+-   EGF: EGFR
+
+```{r}
+
+write.csv(data_ctrl,"data_output/Receptors_of_interest_FPKM.csv")
+```
+
+
+
+```{r}
+sessionInfo()
+```

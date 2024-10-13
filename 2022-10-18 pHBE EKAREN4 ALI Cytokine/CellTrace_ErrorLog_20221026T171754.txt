@@ -1,0 +1,12 @@
+Error Log File for iman_celltracer, run 2022-10-26 17:17:54 for file: 
+D:\Holder\2022-10-18 pHBE EKAREN4 ALI Cytokines.nd2
+
+
+Error 1
+In XY Position 21, at Frame ??
+
+MATLAB:badsubscript - Index in position 1 is invalid. Array indices must be positive integers or logical values.
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\BkVault.m  - Line 225
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\BkVault.m  - Line 182
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 281
+L:\albeck\ImageData\Nick\2022-10-18 pHBE EKAREN4 ALI Cytokine\celltracer_v2_2022_10_18_pHBE_EKAREN4_ALI_Cytokines.m  - Line 230

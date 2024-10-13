@@ -1,0 +1,611 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>SPREADS_F2_HBE1_SPREADs</title>
+<meta name="generator" content="MATLAB 24.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-07-25">
+<meta name="DC.source" content="SPREADS_F2_HBE1_SPREADs.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Figure 2 - HBE1 SPREADs Pro-Inflammatory Treatments</a>
+</li>
+<li>
+<a href="#2">Figure 2A - Example timelapse images of SPREADs</a>
+</li>
+<li>
+<a href="#3">Figure 2B - Example SPREAD Detection and tracking</a>
+</li>
+<li>
+<a href="#4">Figure 2C - Get the bulk cytokine SPREAD frequency</a>
+</li>
+<li>
+<a href="#5">Make Figure 2 - Cytokine-induced SPREADs in HBE1 cells</a>
+</li>
+<li>
+<a href="#6">Figure Legend</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Figure 2 - HBE1 SPREADs Pro-Inflammatory Treatments</h2>
+<p>Showing cytokine-induced spreads in HBE1 cells, demonstrating our matlab port or ARCOS works amazingly at detecting synthetic SPREADs, then measuring the SPREAD frequency in HBE1 cells in response to controls, bulk and single pro-inflammatory cytokines.</p>
+<pre class="codeinput">
+<span class="comment">% add the paths</span>
+addpath(<span class="string">'Z:\Code\Nick'</span>,<span class="string">'Z:\Code\Cell Trace'</span>,<span class="string">'Z:\Code\Image Analysis'</span>,<span class="string">'Z:\Code\ARCOS-MATLAB\Source'</span>)
+</pre>
+<h2 id="2">Figure 2A - Example timelapse images of SPREADs</h2>
+<p>Movie is pulled from 2022-07-28 HBE1 experiment, cells were treated with IL1b. The movie these images are pulled from is also Sup Video 2.</p>
+<h2 id="3">Figure 2B - Example SPREAD Detection and tracking</h2>
+<p>Generate synthetic spreads, then put them through arcos to see how well arcos can identify and track them.</p>
+<pre class="codeinput">[~,x,y,~,~] = arcos_utils.gensynthV2(); <span class="comment">%Generate x and y coords</span>
+
+<span class="comment">% set the seed</span>
+seed = mean(double(evalc(<span class="string">'disp("Daniel Oberbauer")'</span>)));
+rng(seed);
+r = -0.5 + (0.5+0.5)*rand(3600,1); <span class="comment">% Generate noise matrix</span>
+
+nx = x+r*10; <span class="comment">%Inject noise into XCoords;</span>
+ny = y+r*10; <span class="comment">%Inject noise into YCoords;</span>
+
+idx = randi(3600,2000,1); <span class="comment">%Get vector of random indices to remove from dataset to create holes.</span>
+nx(idx,:) = [];
+ny(idx,:) = [];
+
+d{1}.data.XCoord = nx;
+d{1}.data.YCoord = ny;
+bin = arcos_utils.gensynth(d,1,<span class="string">'seed'</span>,<span class="string">"Daniel Oberbauer"</span>); <span class="comment">%Generate synthetic spreads using the given data</span>
+
+[clust_by_time,clust_by_id,bin,~,~] = arcos(d,1,<span class="string">"EKAR"</span>,<span class="string">'bin'</span>,bin); <span class="comment">%Use ARCOS to detect synthetic spreads</span>
+clust_by_id = arcos_analysis.analyze(clust_by_id,d); <span class="comment">%Perform ARCOS analysis to get bounds</span>
+</pre>
+<pre class="codeoutput">Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+Warning: Colon operands must be real scalars. This warning will become an error
+in a future release. 
+</pre>
+<h2 id="4">Figure 2C - Get the bulk cytokine SPREAD frequency</h2>
+<pre class="codeinput">basePath = <span class="string">'Z:\Processed Data\SPREADs\'</span>;
+
+<span class="comment">% 2020-11-30 HBE1 experiment will be used for this plot</span>
+fig2C = {[basePath,<span class="string">'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test\2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test_Processed_Copy.mat'</span>]};
+data2C = convertSPREADToDataframe2(fig2C, <span class="string">'ERKTR'</span>, <span class="string">'tmaxaftertx'</span>,24,<span class="string">'exclude'</span>,{<span class="string">'IL620n'</span>,<span class="string">'TNFa20n'</span>,<span class="string">'Simvastatin'</span>,<span class="string">'EGF'</span>});
+data2Ca = data2C;
+data2Ca.txinfo = strrep(data2Ca.txinfo,<span class="string">'1 fim '</span>,<span class="string">''</span>);
+data2Ca.txinfo = strrep(data2Ca.txinfo,<span class="string">'1 fim '</span>,<span class="string">''</span>); data2Ca.txinfo = strrep(data2Ca.txinfo, <span class="string">'10ng/mL '</span>,<span class="string">''</span>);
+data2Ca.txinfo = strrep(data2Ca.txinfo, <span class="string">'20ug/mL '</span>,<span class="string">''</span>); data2Ca.txinfo = strrep(data2Ca.txinfo, <span class="string">'1 v'</span>,<span class="string">'v'</span>);
+<span class="comment">% txOrder = {'1 vehicle', '20ug/mL LPS', '20ug/mL PolyIC', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5 10ng/mL IL9', '10ng/mL IL17a 10ng/mL IL23', '10ng/mL IFNy 10ng/mL TNFa', '10ng/mL IL1b 10ng/mL IL6 10ng/mL TNFa'};</span>
+
+<span class="comment">% put them in order</span>
+txOrder = {<span class="string">'vehicle'</span>, <span class="string">'IL1b IL6 TNFa'</span>, <span class="string">'IFNy TNFa'</span>, <span class="string">'IL13 IL4 IL5'</span>, <span class="string">'IL13 IL4 IL5 IL9'</span>, <span class="string">'IL17a IL23'</span>, <span class="string">'LPS'</span>, <span class="string">'PolyIC'</span>};
+data2Ca.exptx = categorical(data2Ca.txinfo,txOrder);
+
+<span class="comment">% get the statistics for plotting</span>
+barHold = grpstats(data2Ca,<span class="string">"exptx"</span>,[<span class="string">"mean"</span>,<span class="string">"median"</span>,<span class="string">"sem"</span>],<span class="string">"DataVars"</span>,<span class="string">"freq"</span>);
+barHold.exptx = categorical(barHold.exptx,txOrder)
+
+<span class="comment">% See which are significantly different versus control (vehicle)</span>
+[~,~,stats] = anova1(data2Ca.freq,data2Ca.exptx,<span class="string">'off'</span>);
+[resultsC,~,~,gnamesC] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(stats.gnames,<span class="string">'vehicle'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTblC = array2table(resultsC,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTblC.(<span class="string">"Group"</span>) = gnamesC(resultsTblC.(<span class="string">"Group"</span>));
+resultsTblC.(<span class="string">"Control Group"</span>) = gnamesC(resultsTblC.(<span class="string">"Control Group"</span>))
+</pre>
+<pre class="codeoutput">
+barHold =
+
+  8&times;5 table
+
+                             exptx          GroupCount    mean_freq    median_freq    sem_freq
+                        ________________    __________    _________    ___________    ________
+
+    vehicle             vehicle                 4           3.567         3.674       0.21203 
+    IL1b IL6 TNFa       IL1b IL6 TNFa           4          11.985        11.771        1.6369 
+    IFNy TNFa           IFNy TNFa               4          15.534        15.695        1.3837 
+    IL13 IL4 IL5        IL13 IL4 IL5            4          3.1568        2.9606       0.23367 
+    IL13 IL4 IL5 IL9    IL13 IL4 IL5 IL9        4            3.46        3.8166       0.50654 
+    IL17a IL23          IL17a IL23              4          4.2804        4.1733       0.45586 
+    LPS                 LPS                     4          6.3849        6.5989         0.479 
+    PolyIC              PolyIC                  4          3.6205        3.5313       0.22252 
+
+
+resultsTblC =
+
+  7&times;6 table
+
+           Group            Control Group    Lower Limit    Difference    Upper Limit     P-value  
+    ____________________    _____________    ___________    __________    ___________    __________
+
+    {'IL1b IL6 TNFa'   }     {'vehicle'}        5.1371          8.418       11.699       1.1934e-06
+    {'IFNy TNFa'       }     {'vehicle'}        8.6862         11.967       15.248       3.7559e-10
+    {'IL13 IL4 IL5'    }     {'vehicle'}       -3.6911        -0.4102       2.8707          0.99944
+    {'IL13 IL4 IL5 IL9'}     {'vehicle'}       -3.3879       -0.10701       3.1739                1
+    {'IL17a IL23'      }     {'vehicle'}       -2.5675        0.71339       3.9943          0.98476
+    {'LPS'             }     {'vehicle'}      -0.46302         2.8179       6.0988          0.11365
+    {'PolyIC'          }     {'vehicle'}       -3.2274       0.053504       3.3344                1
+
+</pre>
+<h2 id="5">Make Figure 2 - Cytokine-induced SPREADs in HBE1 cells</h2>
+<pre class="codeinput">
+<span class="comment">% make figure 2</span>
+fig2 = figure;
+
+<span class="comment">% set up the subplot handles</span>
+ax = axes;
+
+<span class="comment">% standardize the figure for printing</span>
+fontname(fig2,<span class="string">"Arial"</span>); fontsize(fig2,8,<span class="string">"points"</span>) <span class="comment">% make the font 8 pt and arial</span>
+fig2.Units = <span class="string">"inches"</span>; <span class="comment">% make it inches</span>
+fig2.Position = [0.05,0.05,8.5,11]; <span class="comment">% put it on a page</span>
+
+<span class="comment">% Figure 2A - leave empty space for SPREAD images</span>
+ah = subplot(4,6,1:6);
+ax(1) = ah; <span class="comment">% append the axis handle</span>
+xticklabels({<span class="string">''</span>}); yticklabels({<span class="string">''</span>});
+
+<span class="comment">% Figure 2B - Plot the Synthetic SPREADs that have been identified and tracked via ARCOS</span>
+<span class="keyword">for</span> iplot = 1:6
+    ah = subplot(4,6,iplot+6);
+    ax(iplot+1) = ah;
+    arcos_plot.plot(clust_by_time,clust_by_id,bin,d,1,iplot,<span class="string">'handle'</span>,ah,<span class="string">'close'</span>,false,<span class="string">'outpath'</span>,[],<span class="string">'markersize'</span>,2) <span class="comment">%Plot the spreads.</span>
+    xticks([]); xticklabels({<span class="string">''</span>}); yticks([]); yticklabels({<span class="string">''</span>}); title(<span class="string">''</span>); <span class="comment">% clean up the axis labels and title</span>
+<span class="keyword">end</span>
+
+<span class="comment">% Figure 2C - Plot the bulk cytokine SPREAD frequency</span>
+ah = subplot(4,6,[13:16,19:22]);
+ax(8) = ah;
+bar(barHold.exptx,barHold.mean_freq,<span class="keyword">...</span><span class="comment"> % plot the mean spread duration</span>
+    <span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="keyword">...</span>
+    <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1.5);
+hold <span class="string">on</span>;
+ylabel(<span class="string">'SPREAD Frequency'</span>);
+errorbar(barHold.exptx,barHold.mean_freq,barHold.sem_freq,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1.5,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% plot SEM</span>
+swarmchart(data2Ca.exptx,data2Ca.freq,<span class="string">'XJitter'</span>,<span class="string">'density'</span>,<span class="string">'YJitter'</span>,<span class="string">'none'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerFaceColor'</span>,[0.5,0.5,0.5]) <span class="comment">% ,'MarkerFaceColor','b' % raw data</span>
+plot(barHold.exptx,barHold.median_freq,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% ,'MarkerFaceColor','b' % plot median</span>
+ylim([0,21.5]);
+hold <span class="string">off</span>;
+
+<span class="comment">% standardize the subplots</span>
+ax.set(<span class="string">'Units'</span>,<span class="string">'Inches'</span>) <span class="comment">% make the subplots inches</span>
+
+<span class="comment">% assign their positions</span>
+ax(1).InnerPosition = [0.5,9,7.4,1.15]; <span class="comment">% For Figure 2A (to be filled in later in affinity with images of cells)</span>
+set(ax(1),<span class="string">'TickLength'</span>,[0, 0]); <span class="comment">% set the tick length</span>
+
+<span class="comment">% for all of the synthetic arcos data (Figure 2B)</span>
+sizeP = 1.15; <span class="comment">% each subplot in inches</span>
+bufferP = 0.1; <span class="comment">% space btwn each one</span>
+<span class="keyword">for</span> iSub = 2:7
+    ax(iSub).InnerPosition = [0.5+((iSub-2)*sizeP)+(bufferP*(iSub-2)),7.5,sizeP,sizeP];
+<span class="keyword">end</span>
+
+<span class="comment">% For the grouped cytokine data (Figure 2C)</span>
+ax(8).InnerPosition = [1,3.1,3.75,3];
+set(ax(8),<span class="string">'TickLength'</span>,[0.025, 0.05],<span class="string">'LineWidth'</span>,1); <span class="comment">% set the tick length</span>
+
+<span class="comment">% For the single cytokine data (Figure 2D)</span>
+<span class="comment">% ax(9).Position = [0.5,0.5,5.5,6];</span>
+
+<span class="comment">% save the figures</span>
+saveas(gcf,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F2_HBE1_SPREADs.fig'</span>)
+saveas(gcf,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F2_HBE1_SPREADs.svg'</span>)
+</pre>
+<pre class="codeoutput">Warning: Do not close the figure until the process has finished 
+Warning: Do not close the figure until the process has finished 
+Warning: Do not close the figure until the process has finished 
+Warning: Do not close the figure until the process has finished 
+Warning: Do not close the figure until the process has finished 
+Warning: Do not close the figure until the process has finished 
+</pre>
+<img vspace="5" hspace="5" src="SPREADS_F2_HBE1_SPREADs_01.png" alt=""> <h2 id="6">Figure Legend</h2>
+<p>Figure 2: Spatially localized ERK activity in HBE1 cells in response to pro-inflammatory ligands. (A) Time lapse images showing an example ERK activity wave (SPREAD) occurring in HBE1 cells. The dashed white line indicates the edge of a SPREAD event, and the white arrows represent the direction of SPREAD growth or shrinkage. Time 0 indicates the initiation point of the example SPREAD, approximately 16 hours after treatment with 10 ng/mL IL-1β. (B) SPREAD detection results on simulated ERK activity data. Red dots represent active cells identified to be part of a SPREAD. Blue solid lines show the boundary of detected SPREADs. Black dots represent inactive cells. Green dots show cells that are considered to have active ERK, but are not a part of a detected SPREAD. (C and D) SPREAD frequency (SPREAD occurrences per hour, normalized to mm2) in the 24 hours following treatment with the indicated stimuli. Gray dots represent technical replicates, red diamonds show the median, and error bars show S.E.M. Red asterisks and lines indicate conditions where SPREAD frequency is significantly different compared to the control group (P &lt; 0.005), calculated using 1-way ANOVA compared to the control and adjusted for multiple comparisons via the Dunnett's procedure.</p>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Figure 2 - HBE1 SPREADs Pro-Inflammatory Treatments
+% Showing cytokine-induced spreads in HBE1 cells, demonstrating our matlab
+% port or ARCOS works amazingly at detecting synthetic SPREADs, then
+% measuring the SPREAD frequency in HBE1 cells in response to controls,
+% bulk and single pro-inflammatory cytokines.
+
+% add the paths
+addpath('Z:\Code\Nick','Z:\Code\Cell Trace','Z:\Code\Image Analysis','Z:\Code\ARCOS-MATLAB\Source')
+
+%% Figure 2A - Example timelapse images of SPREADs
+% Movie is pulled from 2022-07-28 HBE1 experiment, cells were treated with
+% IL1b. The movie these images are pulled from is also Sup Video 2.
+
+
+%% Figure 2B - Example SPREAD Detection and tracking
+% Generate synthetic spreads, then put them through arcos to see how well
+% arcos can identify and track them.
+
+[~,x,y,~,~] = arcos_utils.gensynthV2(); %Generate x and y coords
+
+% set the seed 
+seed = mean(double(evalc('disp("Daniel Oberbauer")')));
+rng(seed); 
+r = -0.5 + (0.5+0.5)*rand(3600,1); % Generate noise matrix
+
+nx = x+r*10; %Inject noise into XCoords;
+ny = y+r*10; %Inject noise into YCoords;
+
+idx = randi(3600,2000,1); %Get vector of random indices to remove from dataset to create holes.
+nx(idx,:) = [];
+ny(idx,:) = [];
+
+d{1}.data.XCoord = nx;
+d{1}.data.YCoord = ny;
+bin = arcos_utils.gensynth(d,1,'seed',"Daniel Oberbauer"); %Generate synthetic spreads using the given data
+
+[clust_by_time,clust_by_id,bin,~,~] = arcos(d,1,"EKAR",'bin',bin); %Use ARCOS to detect synthetic spreads
+clust_by_id = arcos_analysis.analyze(clust_by_id,d); %Perform ARCOS analysis to get bounds
+
+%% Figure 2C - Get the bulk cytokine SPREAD frequency
+basePath = 'Z:\Processed Data\SPREADs\';
+
+% 2020-11-30 HBE1 experiment will be used for this plot
+fig2C = {[basePath,'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test\2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test_Processed_Copy.mat']};
+data2C = convertSPREADToDataframe2(fig2C, 'ERKTR', 'tmaxaftertx',24,'exclude',{'IL620n','TNFa20n','Simvastatin','EGF'});
+data2Ca = data2C;
+data2Ca.txinfo = strrep(data2Ca.txinfo,'1 fim ','');
+data2Ca.txinfo = strrep(data2Ca.txinfo,'1 fim ',''); data2Ca.txinfo = strrep(data2Ca.txinfo, '10ng/mL ','');
+data2Ca.txinfo = strrep(data2Ca.txinfo, '20ug/mL ',''); data2Ca.txinfo = strrep(data2Ca.txinfo, '1 v','v');
+% txOrder = {'1 vehicle', '20ug/mL LPS', '20ug/mL PolyIC', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5 10ng/mL IL9', '10ng/mL IL17a 10ng/mL IL23', '10ng/mL IFNy 10ng/mL TNFa', '10ng/mL IL1b 10ng/mL IL6 10ng/mL TNFa'};
+
+% put them in order
+txOrder = {'vehicle', 'IL1b IL6 TNFa', 'IFNy TNFa', 'IL13 IL4 IL5', 'IL13 IL4 IL5 IL9', 'IL17a IL23', 'LPS', 'PolyIC'};
+data2Ca.exptx = categorical(data2Ca.txinfo,txOrder);
+
+% get the statistics for plotting
+barHold = grpstats(data2Ca,"exptx",["mean","median","sem"],"DataVars","freq");
+barHold.exptx = categorical(barHold.exptx,txOrder)
+
+% See which are significantly different versus control (vehicle)
+[~,~,stats] = anova1(data2Ca.freq,data2Ca.exptx,'off');
+[resultsC,~,~,gnamesC] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(stats.gnames,'vehicle')),'Display','off'); 
+resultsTblC = array2table(resultsC,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblC.("Group") = gnamesC(resultsTblC.("Group"));
+resultsTblC.("Control Group") = gnamesC(resultsTblC.("Control Group"))
+
+%% Make Figure 2 - Cytokine-induced SPREADs in HBE1 cells
+
+% make figure 2
+fig2 = figure;
+
+% set up the subplot handles
+ax = axes;
+
+% standardize the figure for printing
+fontname(fig2,"Arial"); fontsize(fig2,8,"points") % make the font 8 pt and arial 
+fig2.Units = "inches"; % make it inches
+fig2.Position = [0.05,0.05,8.5,11]; % put it on a page
+
+% Figure 2A - leave empty space for SPREAD images
+ah = subplot(4,6,1:6);
+ax(1) = ah; % append the axis handle 
+xticklabels({''}); yticklabels({''});
+
+% Figure 2B - Plot the Synthetic SPREADs that have been identified and tracked via ARCOS 
+for iplot = 1:6
+    ah = subplot(4,6,iplot+6);
+    ax(iplot+1) = ah;
+    arcos_plot.plot(clust_by_time,clust_by_id,bin,d,1,iplot,'handle',ah,'close',false,'outpath',[],'markersize',2) %Plot the spreads.
+    xticks([]); xticklabels({''}); yticks([]); yticklabels({''}); title(''); % clean up the axis labels and title
+end
+
+% Figure 2C - Plot the bulk cytokine SPREAD frequency 
+ah = subplot(4,6,[13:16,19:22]);
+ax(8) = ah;
+bar(barHold.exptx,barHold.mean_freq,... % plot the mean spread duration
+    'FaceColor',[0.75,0.75,0.75],...
+    'EdgeColor','k', 'LineWidth',1.5);
+hold on;
+ylabel('SPREAD Frequency');
+errorbar(barHold.exptx,barHold.mean_freq,barHold.sem_freq,'.','vertical','Color','k','LineWidth', 1.5,'MarkerSize', 1); % plot SEM
+swarmchart(data2Ca.exptx,data2Ca.freq,'XJitter','density','YJitter','none','MarkerEdgeColor','k','MarkerFaceColor',[0.5,0.5,0.5]) % ,'MarkerFaceColor','b' % raw data
+plot(barHold.exptx,barHold.median_freq,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % ,'MarkerFaceColor','b' % plot median
+ylim([0,21.5]);
+hold off;
+
+% standardize the subplots
+ax.set('Units','Inches') % make the subplots inches
+
+% assign their positions
+ax(1).InnerPosition = [0.5,9,7.4,1.15]; % For Figure 2A (to be filled in later in affinity with images of cells)
+set(ax(1),'TickLength',[0, 0]); % set the tick length
+
+% for all of the synthetic arcos data (Figure 2B)
+sizeP = 1.15; % each subplot in inches
+bufferP = 0.1; % space btwn each one
+for iSub = 2:7
+    ax(iSub).InnerPosition = [0.5+((iSub-2)*sizeP)+(bufferP*(iSub-2)),7.5,sizeP,sizeP];
+end
+
+% For the grouped cytokine data (Figure 2C)
+ax(8).InnerPosition = [1,3.1,3.75,3];
+set(ax(8),'TickLength',[0.025, 0.05],'LineWidth',1); % set the tick length
+
+% For the single cytokine data (Figure 2D)
+% ax(9).Position = [0.5,0.5,5.5,6];
+
+% save the figures
+saveas(gcf,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F2_HBE1_SPREADs.fig')
+saveas(gcf,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F2_HBE1_SPREADs.svg')
+
+%% Figure Legend
+% Figure 2: Spatially localized ERK activity in HBE1 cells in response to pro-inflammatory ligands. 
+% (A) Time lapse images showing an example ERK activity wave (SPREAD) occurring in HBE1 cells. 
+% The dashed white line indicates the edge of a SPREAD event, and the white arrows represent the 
+% direction of SPREAD growth or shrinkage. Time 0 indicates the initiation point of the example SPREAD, 
+% approximately 16 hours after treatment with 10 ng/mL IL-1β. (B) SPREAD detection results on simulated 
+% ERK activity data. Red dots represent active cells identified to be part of a SPREAD. 
+% Blue solid lines show the boundary of detected SPREADs. Black dots represent inactive cells. 
+% Green dots show cells that are considered to have active ERK, but are not a part of a detected SPREAD.
+% (C and D) SPREAD frequency (SPREAD occurrences per hour, normalized to mm2) in the 24 hours 
+% following treatment with the indicated stimuli. Gray dots represent technical replicates, 
+% red diamonds show the median, and error bars show S.E.M. Red asterisks and lines indicate conditions 
+% where SPREAD frequency is significantly different compared to the control group (P < 0.005), 
+% calculated using 1-way ANOVA compared to the control and adjusted for multiple comparisons via the 
+% Dunnett's procedure.
+
+
+
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

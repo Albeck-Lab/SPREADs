@@ -1,0 +1,471 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>SPREADS_E3_HBE1_SPREAD_Dur_Area_EGF</title>
+<meta name="generator" content="MATLAB 24.1">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-07-25">
+<meta name="DC.source" content="SPREADS_E3_HBE1_SPREAD_Dur_Area_EGF.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Figure E3 - Analysis of HBE1 SPREAD frequency after EGF per run, the SPREAD area and duration across bulk cytokine treatment groups.</a>
+</li>
+<li>
+<a href="#2">Figure E3-A Combine Multiple SPREAD experiment's Vehicle and EGF data</a>
+</li>
+<li>
+<a href="#3">Pull the vehicle and EGF treated datasets</a>
+</li>
+<li>
+<a href="#4">Figure E3 - B &amp; C - compare SPREAD area and SPREAD duration to vehicle</a>
+</li>
+<li>
+<a href="#5">Make Figure E3 via plotting functions</a>
+</li>
+<li>
+<a href="#6">Figure Legend:</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Figure E3 - Analysis of HBE1 SPREAD frequency after EGF per run, the SPREAD area and duration across bulk cytokine treatment groups.</h2>
+<p>Experimenting with HBE1 cells expressing the ERK-KTR ERK biosensor Comparing SPREAD freqency for Vehicle and EGF treated cells across experiments (Figure E3A) Comparing SPREAD area (in um^2) across bulk cytokine treatments (Figure E3B) Comparing SPREAD duration (in minutes) across bulk cytokine treatments (Figure E3C) Figure legend is at the bottom.</p>
+<pre class="codeinput">addpath(<span class="string">'Z:\Code\Nick'</span>,<span class="string">'Z:\Code\Cell Trace'</span>,<span class="string">'Z:\Code\Image Analysis'</span>)
+</pre>
+<h2 id="2">Figure E3-A Combine Multiple SPREAD experiment's Vehicle and EGF data</h2>
+<pre class="codeinput">basePath = <span class="string">'Z:\Processed Data\SPREADs\'</span>;
+
+<span class="comment">% dataset1 are experiments that have HBE1 cells with ERKTR</span>
+
+<span class="comment">% Experiment 1</span>
+<span class="comment">% 2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test - updated and saved</span>
+dataset1{1} = [basePath,<span class="string">'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test\2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test_Processed_Copy.mat'</span>];
+
+<span class="comment">% Experiment 2</span>
+<span class="comment">% 2021-08-18 HBE1 AE Cyto - data updated and saved</span>
+dataset1{2} = [basePath,<span class="string">'2021-08-18 HBE1 AE Cyto INS 2DG OLI\2021-08-18 HBE1 AE Cyto INS 2DG OLI_Processed_Copy.mat'</span>];
+
+<span class="comment">% dataset2 are experiments that have HBE1 cells with EKAREN4</span>
+<span class="comment">% Experiment 3</span>
+<span class="comment">% 2022-08-18 HBE1 EKAR Cytokine Array</span>
+dataset2{1} = [basePath,<span class="string">'2022-08-18 HBE1 EKAR Cyto HC\2022-08-18 HBE1 EKAR Cyto HC_Processed_Copy.mat'</span>];
+
+<span class="comment">% Experiment 4</span>
+<span class="comment">% 2022-11-10 HBE1 EKAR Cytokine Array</span>
+dataset2{2} = [basePath,<span class="string">'2022-11-10 HBE1 EKAREN4 Cyto Inhibs\2022-11-10 HBE1 EKAREN4 Cyto Inhibs_Processed_Copy.mat'</span>];
+
+<span class="comment">% collect the data from the respective experiments</span>
+data1 = convertSPREADToDataframe2(dataset1, <span class="string">'ERKTR'</span>, <span class="string">'tmaxaftertx'</span>,24,<span class="string">'aftertx'</span>,2);
+data2 = convertSPREADToDataframe2(dataset2, <span class="string">'EKAR'</span>, <span class="string">'tmaxaftertx'</span>,24,<span class="string">'aftertx'</span>,2);
+
+<span class="comment">% merge them</span>
+mData = [data1;data2];
+</pre>
+<h2 id="3">Pull the vehicle and EGF treated datasets</h2>
+<pre class="codeinput">thisData = matches(mData.txinfo,{<span class="string">'1 fim 1 vehicle'</span>,<span class="string">'1 fim 1 vehicle 1 vehicle'</span>,<span class="string">'1 fim 10ng/mL EGF'</span>,<span class="string">'1 fim 1 vehicle 10ng/mL EGF'</span>,<span class="string">'1 fim 10ng/mL EGF 1 vehicle'</span>});
+vEdata = mData(thisData,:);
+VEtxOrder = {<span class="string">'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + vehicle1'</span>,<span class="string">'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + EGF10n'</span>,<span class="string">'2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + vehicle1'</span>,<span class="string">'2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + EGF10n'</span>,<span class="keyword">...</span>
+    <span class="string">'2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + vehicle1 + vehicle1'</span>,<span class="string">'2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + EGF10n + vehicle1'</span>,<span class="string">'2022-08-18 HBE1 EKAR Cyto HCfim1 + vehicle1'</span>,<span class="string">'2022-08-18 HBE1 EKAR Cyto HCfim1 + EGF10n'</span>};
+vEdata.exptx = categorical(strcat(vEdata.exp,vEdata.full),VEtxOrder);
+
+vEStats = grpstats(vEdata,<span class="string">"exptx"</span>,[<span class="string">"mean"</span>,<span class="string">"median"</span>,<span class="string">"sem"</span>],<span class="string">"DataVars"</span>,<span class="string">"freq"</span>) <span class="comment">% get the mean, median,I and SEM of the data</span>
+vEStats.exptx = categorical(vEStats.exptx,VEtxOrder);
+</pre>
+<pre class="codeoutput">
+vEStats =
+
+  8&times;5 table
+
+                                                                                                           exptx                                    GroupCount    mean_freq    median_freq    sem_freq
+                                                                            ____________________________________________________________________    __________    _________    ___________    ________
+
+    2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + vehicle1    2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + vehicle1        4            3.567         3.674       0.21203
+    2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + EGF10n      2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + EGF10n          4            31.05        29.142        3.6125
+    2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + vehicle1           2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + vehicle1               4           1.1172        1.0931      0.082379
+    2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + EGF10n             2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + EGF10n                 4            36.07        36.067        2.5559
+    2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + vehicle1 + vehicle1           2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + vehicle1 + vehicle1               2           4.2804        4.2804       0.61148
+    2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + EGF10n + vehicle1             2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + EGF10n + vehicle1                 2             3.86          3.86       0.49683
+    2022-08-18 HBE1 EKAR Cyto HCfim1 + vehicle1                             2022-08-18 HBE1 EKAR Cyto HCfim1 + vehicle1                                 4          0.97512       0.99679      0.026775
+    2022-08-18 HBE1 EKAR Cyto HCfim1 + EGF10n                               2022-08-18 HBE1 EKAR Cyto HCfim1 + EGF10n                                   4           14.126        13.151        2.5979
+
+</pre>
+<h2 id="4">Figure E3 - B &amp; C - compare SPREAD area and SPREAD duration to vehicle</h2>
+<pre class="codeinput">
+<span class="comment">% 2020-11-30 HBE1 use this run for the plots</span>
+figE3BC = {[basePath,<span class="string">'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test\2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test_Processed_Copy.mat'</span>]};
+dataE3BCa = convertSPREADToDataframe2(figE3BC, <span class="string">'ERKTR'</span>, <span class="string">'tmaxaftertx'</span>,24,<span class="string">'exclude'</span>,{<span class="string">'IL620n'</span>,<span class="string">'TNFa20n'</span>,<span class="string">'Simvastatin'</span>,<span class="string">'EGF'</span>});
+dataE3BC = dataE3BCa; <span class="comment">% make a copy of the data for ease of use</span>
+
+<span class="comment">% simplify the names for plotting</span>
+dataE3BC.txinfo = strrep(dataE3BC.txinfo,<span class="string">'1 fim '</span>,<span class="string">''</span>); dataE3BC.txinfo = strrep(dataE3BC.txinfo, <span class="string">'10ng/mL '</span>,<span class="string">''</span>);
+dataE3BC.txinfo = strrep(dataE3BC.txinfo, <span class="string">'20ug/mL '</span>,<span class="string">''</span>); dataE3BC.txinfo = strrep(dataE3BC.txinfo, <span class="string">'1 v'</span>,<span class="string">'v'</span>);
+<span class="comment">% txOrder = {'1 vehicle', '20ug/mL LPS', '20ug/mL PolyIC', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5 10ng/mL IL9', '10ng/mL IL17a 10ng/mL IL23', '10ng/mL IFNy 10ng/mL TNFa', '10ng/mL IL1b 10ng/mL IL6 10ng/mL TNFa'};</span>
+
+<span class="comment">% put them in order</span>
+txOrder = {<span class="string">'vehicle'</span>, <span class="string">'IL1b IL6 TNFa'</span>, <span class="string">'IFNy TNFa'</span>, <span class="string">'IL13 IL4 IL5'</span>, <span class="string">'IL13 IL4 IL5 IL9'</span>, <span class="string">'IL17a IL23'</span>, <span class="string">'LPS'</span>, <span class="string">'PolyIC'</span>};
+dataE3BC.exptx = categorical(dataE3BC.txinfo,txOrder);
+
+<span class="comment">% get the data on spread area and duration</span>
+E3BC = grpstats(dataE3BC,<span class="string">"exptx"</span>,[<span class="string">"mean"</span>,<span class="string">"median"</span>,<span class="string">"sem"</span>],<span class="string">"DataVars"</span>,[<span class="string">"area"</span>,<span class="string">"dur"</span>]);
+E3BC.exptx = categorical(E3BC.exptx,txOrder)
+
+<span class="comment">% See which SPREAD areas are significantly different versus control (vehicle)</span>
+[~,~,statsArea] = anova1(dataE3BC.area,dataE3BC.exptx,<span class="string">'off'</span>);
+[resultsArea,~,~,gnamesArea] = multcompare(statsArea,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(statsArea.gnames,<span class="string">'vehicle'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTblArea = array2table(resultsArea,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTblArea.(<span class="string">"Group"</span>) = gnamesArea(resultsTblArea.(<span class="string">"Group"</span>));
+resultsTblArea.(<span class="string">"Control Group"</span>) = gnamesArea(resultsTblArea.(<span class="string">"Control Group"</span>))
+
+<span class="comment">% See which SPREAD durations are significantly different versus control (vehicle)</span>
+[~,~,statsDur] = anova1(dataE3BC.dur,dataE3BC.exptx,<span class="string">'off'</span>);
+[resultsDur,~,~,gnamesDur] = multcompare(statsDur,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(statsDur.gnames,<span class="string">'vehicle'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTblDur = array2table(resultsDur,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTblDur.(<span class="string">"Group"</span>) = gnamesDur(resultsTblDur.(<span class="string">"Group"</span>));
+resultsTblDur.(<span class="string">"Control Group"</span>) = gnamesDur(resultsTblDur.(<span class="string">"Control Group"</span>))
+</pre>
+<pre class="codeoutput">
+E3BC =
+
+  8&times;8 table
+
+                             exptx          GroupCount    mean_area    median_area    sem_area    mean_dur    median_dur     sem_dur 
+                        ________________    __________    _________    ___________    ________    ________    __________    _________
+
+    vehicle             vehicle                 4          603.09        629.94        44.992     0.41075      0.41984       0.019491
+    IL1b IL6 TNFa       IL1b IL6 TNFa           4            1596        1601.8        53.387     0.37438      0.36966       0.021694
+    IFNy TNFa           IFNy TNFa               4          1517.5        1517.2        32.801     0.37407       0.3716      0.0089542
+    IL13 IL4 IL5        IL13 IL4 IL5            4          643.41        633.76        44.898     0.34621      0.34051       0.009662
+    IL13 IL4 IL5 IL9    IL13 IL4 IL5 IL9        4          651.48        612.48        78.746     0.37192       0.3727       0.018902
+    IL17a IL23          IL17a IL23              4          975.41        830.07         159.6     0.36691      0.36013       0.028886
+    LPS                 LPS                     4          918.49        908.49        104.08     0.35856      0.36336        0.01069
+    PolyIC              PolyIC                  4          913.95        914.53        71.469      0.3304      0.34692        0.01758
+
+
+resultsTblArea =
+
+  7&times;6 table
+
+           Group            Control Group    Lower Limit    Difference    Upper Limit     P-value  
+    ____________________    _____________    ___________    __________    ___________    __________
+
+    {'IL1b IL6 TNFa'   }     {'vehicle'}        661.15        992.87        1324.6        1.882e-08
+    {'IFNy TNFa'       }     {'vehicle'}        582.69        914.41        1246.1       2.0577e-07
+    {'IL13 IL4 IL5'    }     {'vehicle'}        -291.4        40.319        372.04          0.99953
+    {'IL13 IL4 IL5 IL9'}     {'vehicle'}       -283.33         48.39        380.11          0.99848
+    {'IL17a IL23'      }     {'vehicle'}        40.594        372.31        704.03         0.023236
+    {'LPS'             }     {'vehicle'}       -16.325         315.4        647.12         0.067143
+    {'PolyIC'          }     {'vehicle'}       -20.869        310.85        642.57         0.072775
+
+
+resultsTblDur =
+
+  7&times;6 table
+
+           Group            Control Group    Lower Limit    Difference    Upper Limit    P-value 
+    ____________________    _____________    ___________    __________    ___________    ________
+
+    {'IL1b IL6 TNFa'   }     {'vehicle'}      -0.10864      -0.036362       0.035916      0.57985
+    {'IFNy TNFa'       }     {'vehicle'}      -0.10895      -0.036676       0.035602      0.57136
+    {'IL13 IL4 IL5'    }     {'vehicle'}      -0.13681      -0.064536      0.0077413     0.093919
+    {'IL13 IL4 IL5 IL9'}     {'vehicle'}       -0.1111      -0.038823       0.033454      0.51469
+    {'IL17a IL23'      }     {'vehicle'}      -0.11611      -0.043834       0.028443      0.39242
+    {'LPS'             }     {'vehicle'}      -0.12447      -0.052191       0.020087      0.23231
+    {'PolyIC'          }     {'vehicle'}      -0.15262      -0.080343     -0.0080658     0.024924
+
+</pre>
+<h2 id="5">Make Figure E3 via plotting functions</h2>
+<pre class="codeinput">figgy = figure;
+
+ax = []; <span class="comment">% make an axes handle</span>
+
+<span class="comment">% plot each run's vehicle and EGF SPREAD frequency (Figure E3A)</span>
+ax{1} = subplot(3,1,1);
+bar(vEStats.exptx,vEStats.mean_freq,<span class="keyword">...</span><span class="comment"> % plot the spread frequency</span>
+    <span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="keyword">...</span>
+    <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1.5);
+hold <span class="string">on</span>;
+ylabel(<span class="string">'SPREAD Frequency'</span>)
+errorbar(vEStats.exptx,vEStats.mean_freq,vEStats.sem_freq,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1.5,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% plot SEM</span>
+swarmchart(vEdata.exptx,vEdata.freq,<span class="string">'XJitter'</span>,<span class="string">'density'</span>,<span class="string">'YJitter'</span>,<span class="string">'none'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerFaceColor'</span>,[0.5,0.5,0.5]) <span class="comment">% ,'MarkerFaceColor','b' % raw data</span>
+plot(vEStats.exptx,vEStats.median_freq,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% ,'MarkerFaceColor','b' % plot median</span>
+ylim([0,55]);
+xticklabels({<span class="string">'Vehicle'</span>,<span class="string">'EGF'</span>,<span class="string">'Vehicle'</span>,<span class="string">'EGF'</span>,<span class="string">'Vehicle'</span>,<span class="string">'EGF'</span>,<span class="string">'Vehicle'</span>,<span class="string">'EGF'</span>})
+hold <span class="string">off</span>;
+
+<span class="comment">% plot each conditions SPREAD area (Figure E3B)</span>
+ax{2} = subplot(3,1,2);
+bar(E3BC.exptx,E3BC.mean_area,<span class="keyword">...</span><span class="comment"> % plot the mean area</span>
+    <span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="keyword">...</span>
+    <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1.5);
+hold <span class="string">on</span>;
+ylabel(<span class="string">'Mean SPREAD Area (um^2)'</span>)
+errorbar(E3BC.exptx,E3BC.mean_area,E3BC.sem_area,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1.5,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% plot SEM</span>
+swarmchart(dataE3BC.exptx,dataE3BC.area,<span class="string">'XJitter'</span>,<span class="string">'density'</span>,<span class="string">'YJitter'</span>,<span class="string">'none'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerFaceColor'</span>,[0.5,0.5,0.5]) <span class="comment">% ,'MarkerFaceColor','b' % raw data</span>
+plot(E3BC.exptx,E3BC.median_area,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% ,'MarkerFaceColor','b' % plot median</span>
+ylim([0,2000]);
+hold <span class="string">off</span>;
+
+
+<span class="comment">% plot each conditions SPREAD duration (Fiugre E3C)</span>
+ax{3} = subplot(3,1,3);
+bar(E3BC.exptx,E3BC.mean_dur*60,<span class="keyword">...</span><span class="comment"> % plot the mean spread duration</span>
+    <span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="keyword">...</span>
+    <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1.5);
+hold <span class="string">on</span>;
+ylabel(<span class="string">'Mean SPREAD Duration'</span>);
+errorbar(E3BC.exptx,E3BC.mean_dur*60,E3BC.sem_dur*60,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1.5,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% plot SEM</span>
+swarmchart(dataE3BC.exptx,dataE3BC.dur*60,<span class="string">'XJitter'</span>,<span class="string">'density'</span>,<span class="string">'YJitter'</span>,<span class="string">'none'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerFaceColor'</span>,[0.5,0.5,0.5]) <span class="comment">% ,'MarkerFaceColor','b' % raw data</span>
+plot(E3BC.exptx,E3BC.median_dur*60,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% ,'MarkerFaceColor','b' % plot median</span>
+ylim([0,30]);
+hold <span class="string">off</span>;
+
+<span class="comment">% standardize the figure for printing</span>
+fontname(figgy,<span class="string">"Arial"</span>); fontsize(figgy,8,<span class="string">"points"</span>) <span class="comment">% make the font 8 pt and arial</span>
+figgy.Units = <span class="string">"inches"</span>; <span class="comment">% make it inches</span>
+figgy.Position = [0.05,0.05,8.5,11]; <span class="comment">% put it on a page</span>
+
+ax{1}.Units = <span class="string">'Inches'</span>; ax{2}.Units = <span class="string">'Inches'</span>; ax{3}.Units = <span class="string">'Inches'</span>; <span class="comment">% make the subplots a good size</span>
+ax{3}.InnerPosition = [1.5,1,5.5,2.5]; ax{2}.InnerPosition = [1.5,4.25,5.5,2.5]; ax{1}.InnerPosition = [1.5,7.5,5.5,2.5]; <span class="comment">% make the subplots a good size</span>
+
+saveas(figgy,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\E3_HBE1_SPREAD_Dur_Area_EGF.fig'</span>)
+saveas(figgy,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\E3_HBE1_SPREAD_Dur_Area_EGF.svg'</span>)
+</pre>
+<img vspace="5" hspace="5" src="SPREADS_E3_HBE1_SPREAD_Dur_Area_EGF_01.png" alt=""> <h2 id="6">Figure Legend:</h2>
+<p>Figure E3: Variable SPREAD recognition in EGF treated cells and pro-inflammatory ligands-induced SPREAD size and duration in HBE1 cells. (A) SPREAD frequency in vehicle and EGF treated HBE1 cells compared across experimental replicates. Dark gray dots represent technical replicates within experimental replicates. (B) Mean SPREAD area (maximum area of per SPREAD in &micro;m2) plotted according to treatment. (C) Mean SPREAD duration (in minutes) by treatment. For A&ndash;C, dark gray dots represent technical replicates, red diamonds indicate data median, and error bars show S.E.M. Red asterisks and lines indicate conditions where SPREAD duration is significantly different compared to vehicle control group (P &lt; 0.005), calculated using 1-way ANOVA compared to the control and adjusted for multiple comparisons via the Dunnett%s procedure.</p>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2024a</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Figure E3 - Analysis of HBE1 SPREAD frequency after EGF per run, the SPREAD area and duration across bulk cytokine treatment groups.
+% Experimenting with HBE1 cells expressing the ERK-KTR ERK biosensor
+% Comparing SPREAD freqency for Vehicle and EGF treated cells across experiments (Figure E3A)
+% Comparing SPREAD area (in um^2) across bulk cytokine treatments (Figure E3B)
+% Comparing SPREAD duration (in minutes) across bulk cytokine treatments (Figure E3C)
+% Figure legend is at the bottom.
+
+addpath('Z:\Code\Nick','Z:\Code\Cell Trace','Z:\Code\Image Analysis')
+
+%% Figure E3-A Combine Multiple SPREAD experiment's Vehicle and EGF data
+basePath = 'Z:\Processed Data\SPREADs\';
+
+% dataset1 are experiments that have HBE1 cells with ERKTR
+
+% Experiment 1
+% 2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test - updated and saved
+dataset1{1} = [basePath,'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test\2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test_Processed_Copy.mat'];
+
+% Experiment 2
+% 2021-08-18 HBE1 AE Cyto - data updated and saved
+dataset1{2} = [basePath,'2021-08-18 HBE1 AE Cyto INS 2DG OLI\2021-08-18 HBE1 AE Cyto INS 2DG OLI_Processed_Copy.mat'];
+
+% dataset2 are experiments that have HBE1 cells with EKAREN4
+% Experiment 3
+% 2022-08-18 HBE1 EKAR Cytokine Array
+dataset2{1} = [basePath,'2022-08-18 HBE1 EKAR Cyto HC\2022-08-18 HBE1 EKAR Cyto HC_Processed_Copy.mat'];
+
+% Experiment 4
+% 2022-11-10 HBE1 EKAR Cytokine Array
+dataset2{2} = [basePath,'2022-11-10 HBE1 EKAREN4 Cyto Inhibs\2022-11-10 HBE1 EKAREN4 Cyto Inhibs_Processed_Copy.mat'];
+
+% collect the data from the respective experiments
+data1 = convertSPREADToDataframe2(dataset1, 'ERKTR', 'tmaxaftertx',24,'aftertx',2);
+data2 = convertSPREADToDataframe2(dataset2, 'EKAR', 'tmaxaftertx',24,'aftertx',2);
+
+% merge them
+mData = [data1;data2];
+
+%% Pull the vehicle and EGF treated datasets
+thisData = matches(mData.txinfo,{'1 fim 1 vehicle','1 fim 1 vehicle 1 vehicle','1 fim 10ng/mL EGF','1 fim 1 vehicle 10ng/mL EGF','1 fim 10ng/mL EGF 1 vehicle'});
+vEdata = mData(thisData,:);
+VEtxOrder = {'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + vehicle1','2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat testfim1 + EGF10n','2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + vehicle1','2022-11-10 HBE1 EKAREN4 Cyto Inhibsfim1 + vehicle1 + EGF10n',...
+    '2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + vehicle1 + vehicle1','2021-08-18 HBE1 AE Cyto INS 2DG OLIfim1 + EGF10n + vehicle1','2022-08-18 HBE1 EKAR Cyto HCfim1 + vehicle1','2022-08-18 HBE1 EKAR Cyto HCfim1 + EGF10n'};
+vEdata.exptx = categorical(strcat(vEdata.exp,vEdata.full),VEtxOrder);
+
+vEStats = grpstats(vEdata,"exptx",["mean","median","sem"],"DataVars","freq") % get the mean, median,I and SEM of the data
+vEStats.exptx = categorical(vEStats.exptx,VEtxOrder);
+
+
+%% Figure E3 - B & C - compare SPREAD area and SPREAD duration to vehicle
+
+% 2020-11-30 HBE1 use this run for the plots 
+figE3BC = {[basePath,'2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test\2020-11-30 HBE1 AMPKAR ERKTR Cytokine Array Stat test_Processed_Copy.mat']};
+dataE3BCa = convertSPREADToDataframe2(figE3BC, 'ERKTR', 'tmaxaftertx',24,'exclude',{'IL620n','TNFa20n','Simvastatin','EGF'});
+dataE3BC = dataE3BCa; % make a copy of the data for ease of use 
+
+% simplify the names for plotting
+dataE3BC.txinfo = strrep(dataE3BC.txinfo,'1 fim ',''); dataE3BC.txinfo = strrep(dataE3BC.txinfo, '10ng/mL ','');
+dataE3BC.txinfo = strrep(dataE3BC.txinfo, '20ug/mL ',''); dataE3BC.txinfo = strrep(dataE3BC.txinfo, '1 v','v');
+% txOrder = {'1 vehicle', '20ug/mL LPS', '20ug/mL PolyIC', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5', '10ng/mL IL13 10ng/mL IL4 10ng/mL IL5 10ng/mL IL9', '10ng/mL IL17a 10ng/mL IL23', '10ng/mL IFNy 10ng/mL TNFa', '10ng/mL IL1b 10ng/mL IL6 10ng/mL TNFa'};
+
+% put them in order
+txOrder = {'vehicle', 'IL1b IL6 TNFa', 'IFNy TNFa', 'IL13 IL4 IL5', 'IL13 IL4 IL5 IL9', 'IL17a IL23', 'LPS', 'PolyIC'};
+dataE3BC.exptx = categorical(dataE3BC.txinfo,txOrder);
+
+% get the data on spread area and duration
+E3BC = grpstats(dataE3BC,"exptx",["mean","median","sem"],"DataVars",["area","dur"]);
+E3BC.exptx = categorical(E3BC.exptx,txOrder)
+
+% See which SPREAD areas are significantly different versus control (vehicle)
+[~,~,statsArea] = anova1(dataE3BC.area,dataE3BC.exptx,'off');
+[resultsArea,~,~,gnamesArea] = multcompare(statsArea,"CriticalValueType","dunnett",'ControlGroup',find(contains(statsArea.gnames,'vehicle')),'Display','off'); 
+resultsTblArea = array2table(resultsArea,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblArea.("Group") = gnamesArea(resultsTblArea.("Group"));
+resultsTblArea.("Control Group") = gnamesArea(resultsTblArea.("Control Group"))
+
+% See which SPREAD durations are significantly different versus control (vehicle)
+[~,~,statsDur] = anova1(dataE3BC.dur,dataE3BC.exptx,'off');
+[resultsDur,~,~,gnamesDur] = multcompare(statsDur,"CriticalValueType","dunnett",'ControlGroup',find(contains(statsDur.gnames,'vehicle')),'Display','off'); 
+resultsTblDur = array2table(resultsDur,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblDur.("Group") = gnamesDur(resultsTblDur.("Group"));
+resultsTblDur.("Control Group") = gnamesDur(resultsTblDur.("Control Group"))
+
+
+%% Make Figure E3 via plotting functions
+figgy = figure;
+
+ax = []; % make an axes handle
+
+% plot each run's vehicle and EGF SPREAD frequency (Figure E3A)
+ax{1} = subplot(3,1,1);
+bar(vEStats.exptx,vEStats.mean_freq,... % plot the spread frequency
+    'FaceColor',[0.75,0.75,0.75],...
+    'EdgeColor','k', 'LineWidth',1.5);
+hold on;
+ylabel('SPREAD Frequency')
+errorbar(vEStats.exptx,vEStats.mean_freq,vEStats.sem_freq,'.','vertical','Color','k','LineWidth', 1.5,'MarkerSize', 1); % plot SEM
+swarmchart(vEdata.exptx,vEdata.freq,'XJitter','density','YJitter','none','MarkerEdgeColor','k','MarkerFaceColor',[0.5,0.5,0.5]) % ,'MarkerFaceColor','b' % raw data
+plot(vEStats.exptx,vEStats.median_freq,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % ,'MarkerFaceColor','b' % plot median
+ylim([0,55]);
+xticklabels({'Vehicle','EGF','Vehicle','EGF','Vehicle','EGF','Vehicle','EGF'})
+hold off;
+
+% plot each conditions SPREAD area (Figure E3B)
+ax{2} = subplot(3,1,2); 
+bar(E3BC.exptx,E3BC.mean_area,... % plot the mean area
+    'FaceColor',[0.75,0.75,0.75],...
+    'EdgeColor','k', 'LineWidth',1.5);
+hold on;
+ylabel('Mean SPREAD Area (um^2)')
+errorbar(E3BC.exptx,E3BC.mean_area,E3BC.sem_area,'.','vertical','Color','k','LineWidth', 1.5,'MarkerSize', 1); % plot SEM
+swarmchart(dataE3BC.exptx,dataE3BC.area,'XJitter','density','YJitter','none','MarkerEdgeColor','k','MarkerFaceColor',[0.5,0.5,0.5]) % ,'MarkerFaceColor','b' % raw data
+plot(E3BC.exptx,E3BC.median_area,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % ,'MarkerFaceColor','b' % plot median
+ylim([0,2000]);
+hold off;
+
+
+% plot each conditions SPREAD duration (Fiugre E3C)
+ax{3} = subplot(3,1,3); 
+bar(E3BC.exptx,E3BC.mean_dur*60,... % plot the mean spread duration
+    'FaceColor',[0.75,0.75,0.75],...
+    'EdgeColor','k', 'LineWidth',1.5);
+hold on;
+ylabel('Mean SPREAD Duration');
+errorbar(E3BC.exptx,E3BC.mean_dur*60,E3BC.sem_dur*60,'.','vertical','Color','k','LineWidth', 1.5,'MarkerSize', 1); % plot SEM
+swarmchart(dataE3BC.exptx,dataE3BC.dur*60,'XJitter','density','YJitter','none','MarkerEdgeColor','k','MarkerFaceColor',[0.5,0.5,0.5]) % ,'MarkerFaceColor','b' % raw data
+plot(E3BC.exptx,E3BC.median_dur*60,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % ,'MarkerFaceColor','b' % plot median
+ylim([0,30]);
+hold off;
+
+% standardize the figure for printing
+fontname(figgy,"Arial"); fontsize(figgy,8,"points") % make the font 8 pt and arial 
+figgy.Units = "inches"; % make it inches
+figgy.Position = [0.05,0.05,8.5,11]; % put it on a page
+
+ax{1}.Units = 'Inches'; ax{2}.Units = 'Inches'; ax{3}.Units = 'Inches'; % make the subplots a good size
+ax{3}.InnerPosition = [1.5,1,5.5,2.5]; ax{2}.InnerPosition = [1.5,4.25,5.5,2.5]; ax{1}.InnerPosition = [1.5,7.5,5.5,2.5]; % make the subplots a good size
+
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\E3_HBE1_SPREAD_Dur_Area_EGF.fig')
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\E3_HBE1_SPREAD_Dur_Area_EGF.svg')
+
+%% Figure Legend:
+%
+% Figure E3: Variable SPREAD recognition in EGF treated cells and pro-inflammatory ligands-induced 
+% SPREAD size and duration in HBE1 cells. (A) SPREAD frequency in vehicle and EGF treated HBE1 cells 
+% compared across experimental replicates. Dark gray dots represent technical replicates within 
+% experimental replicates. (B) Mean SPREAD area (maximum area of per SPREAD in µm2) plotted according 
+% to treatment. (C) Mean SPREAD duration (in minutes) by treatment. For A–C, dark gray dots represent 
+% technical replicates, red diamonds indicate data median, and error bars show S.E.M. Red asterisks 
+% and lines indicate conditions where SPREAD duration is significantly different compared to vehicle 
+% control group (P < 0.005), calculated using 1-way ANOVA compared to the control and adjusted for 
+% multiple comparisons via the Dunnett%s procedure.
+
+
+##### SOURCE END #####
+-->
+</body>
+</html>

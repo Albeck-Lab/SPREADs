@@ -1,0 +1,506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      -->
+<title>SPREADS_F5_HBE1_SPREADs_Mechanism</title>
+<meta name="generator" content="MATLAB 23.2">
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+<meta name="DC.date" content="2024-07-31">
+<meta name="DC.source" content="SPREADS_F5_HBE1_SPREADs_Mechanism.m">
+<style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; }
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+span.typesection { color:#A0522D }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="content">
+<h2>Contents</h2>
+<div>
+<ul>
+<li>
+<a href="#1">Figure 5: Investigating the mechanism of cytokine induced spreads in HBE1 cells</a>
+</li>
+<li>
+<a href="#2">Figure 5A - Bar plot of cytokine array</a>
+</li>
+<li>
+<a href="#3">Figure 5B - Inhibition of Cytokine Induced SPREADS by Gef (EGFRi) and Toc (anti-IL6R)</a>
+</li>
+<li>
+<a href="#4">Now plot Figure 5 A &amp; B to be appended with pSTAT3 stains</a>
+</li>
+<li>
+<a href="#5">Save the Figure</a>
+</li>
+<li>
+<a href="#6">Figure 5 - C, D, E &amp; F - pSTAT3 IF Stains</a>
+</li>
+<li>
+<a href="#7">Figure Legend</a>
+</li>
+</ul>
+</div>
+<h2 id="1">Figure 5: Investigating the mechanism of cytokine induced spreads in HBE1 cells</h2>
+<pre class="codeinput">
+<span class="comment">% add paths</span>
+addpath(<span class="string">'Z:\Code\Image Analysis\'</span>,<span class="string">'Z:\Code\Cell Trace\'</span>,<span class="string">'Z:\Code\Nick\'</span>)
+</pre>
+<h2 id="2">Figure 5A - Bar plot of cytokine array</h2>
+<pre class="codeinput">
+<span class="comment">% Load the data from devans microarray</span>
+MAdata = load(<span class="string">'Z:\imageData\SPREADs\Cytokine_Secretion_Data\HBE 20220603\MLdata\MicroArrayData.mat'</span>);
+cytoTable = array2table(MAdata.A',<span class="string">'VariableNames'</span>,MAdata.MemCond_rows',<span class="string">'RowNames'</span>,string(MAdata.CytOrd_cols)');
+cytoTable=cytoTable(cytoTable.Row ~= <span class="string">"IL-1β"</span>,:);
+cytoTable=cytoTable(cytoTable.Row ~= <span class="string">"Negative Control"</span>,:);
+
+<span class="comment">% pull the vehicle and il1b treated cells</span>
+highDiff = (cytoTable.Veh_IL1b_367./cytoTable.Veh_Veh_365) &gt;= 1.5; <span class="comment">% get logical of cytokines &gt;= 1.5 fold over vehicle</span>
+</pre>
+<h2 id="3">Figure 5B - Inhibition of Cytokine Induced SPREADS by Gef (EGFRi) and Toc (anti-IL6R)</h2>
+<pre class="codeinput">
+<span class="comment">% load a representative experimental replicate's SPREAD data</span>
+dataloc = load(<span class="string">'Z:\Processed Data\SPREADs\2022-11-10 HBE1 EKAREN4 Cyto Inhibs\2022-11-10 HBE1 EKAREN4 Cyto Inhibs_Processed.mat'</span>);
+dataloc = dataloc.dataloc; <span class="comment">% pull out dataloc</span>
+
+<span class="comment">% Get the SPREAD data from it!</span>
+data1 = convertSPREADToDataframe2(dataloc, <span class="string">'EKAR'</span>, <span class="string">'aftertx'</span>,2,<span class="string">'exclude'</span>,{<span class="string">'EGF'</span>},<span class="string">'tmaxaftertx'</span>,24);
+
+<span class="comment">% pull the single cytokine data</span>
+no10 = ~contains(data1.txinfo,<span class="string">'10ng/mL'</span>); <span class="comment">% only need the 20ng/mL data</span>
+data2 = data1(no10,:);
+
+<span class="comment">% now give the treatments prettier names</span>
+oldTxNames = {<span class="string">'1 fim 1 vehicle 1 vehicle'</span>, <span class="string">'1 fim 10ug/mL Tocilizumab 1 vehicle'</span>, <span class="string">'1 fim 1uM Gefitinib 1 vehicle'</span>,<span class="keyword">...</span>
+              <span class="string">'1 fim 1 vehicle 20ng/mL IL6'</span>, <span class="string">'1 fim 10ug/mL Tocilizumab 20ng/mL IL6'</span>, <span class="string">'1 fim 1uM Gefitinib 20ng/mL IL6'</span>,<span class="keyword">...</span>
+              <span class="string">'1 fim 1 vehicle 20ng/mL IL1b'</span>, <span class="string">'1 fim 10ug/mL Tocilizumab 20ng/mL IL1b'</span>, <span class="string">'1 fim 1uM Gefitinib 20ng/mL IL1b'</span>,<span class="keyword">...</span>
+              <span class="string">'1 fim 1 vehicle 20ng/mL IFNy'</span>, <span class="string">'1 fim 10ug/mL Tocilizumab 20ng/mL IFNy'</span>, <span class="string">'1 fim 1uM Gefitinib 20ng/mL IFNy'</span>,<span class="keyword">...</span>
+              };
+txNames = {<span class="string">'Veh + Veh'</span>,<span class="string">'Toc + Veh'</span>,<span class="string">'Gef + Veh'</span>,<span class="keyword">...</span>
+           <span class="string">'IL6 + Veh'</span>,<span class="string">'IL6 + Toc'</span>,<span class="string">'IL6 + Gef'</span>,<span class="keyword">...</span>
+           <span class="string">'IL1b + Veh'</span>,<span class="string">'IL1b + Toc'</span>,<span class="string">'IL1b + Gef'</span>,<span class="keyword">...</span>
+           <span class="string">'IFNy + Veh'</span>,<span class="string">'IFNy + Toc'</span>,<span class="string">'IFNy + Gef'</span>,<span class="keyword">...</span>
+           };
+data2.exptx = categorical(data2.txinfo,oldTxNames,txNames);
+
+<span class="comment">% get the statistics for plotting</span>
+freqData = grpstats(data2,<span class="string">"exptx"</span>,[<span class="string">"mean"</span>,<span class="string">"median"</span>,<span class="string">"sem"</span>],<span class="string">"DataVars"</span>,<span class="string">"freq"</span>)
+
+<span class="comment">% do the initial anova for the data</span>
+[~,~,stats] = anova1(data2.freq,data2.exptx,<span class="string">'off'</span>);
+
+<span class="comment">% See which are significantly different versus control (vehicle)</span>
+[resultsC,~,~,gnamesC] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(stats.gnames,<span class="string">'Veh + Veh'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTblC = array2table(resultsC,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTblC.(<span class="string">"Group"</span>) = gnamesC(resultsTblC.(<span class="string">"Group"</span>));
+resultsTblC.(<span class="string">"Control Group"</span>) = gnamesC(resultsTblC.(<span class="string">"Control Group"</span>))
+
+<span class="comment">% See if IL6 + toc or gef are significantly different from IL6 + veh</span>
+[results6,~,~,gnames6] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(stats.gnames,<span class="string">'IL6 + Veh'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTbl6 = array2table(results6,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTbl6.(<span class="string">"Group"</span>) = gnames6(resultsTbl6.(<span class="string">"Group"</span>));
+resultsTbl6.(<span class="string">"Control Group"</span>) = gnames6(resultsTbl6.(<span class="string">"Control Group"</span>))
+
+<span class="comment">% See if IL1b + toc or gef are significantly different from IL1b + veh</span>
+[results1b,~,~,gnames1b] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(stats.gnames,<span class="string">'IL1b + Veh'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTbl1b = array2table(results1b,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTbl1b.(<span class="string">"Group"</span>) = gnames1b(resultsTbl1b.(<span class="string">"Group"</span>));
+resultsTbl1b.(<span class="string">"Control Group"</span>) = gnames1b(resultsTbl1b.(<span class="string">"Control Group"</span>))
+
+<span class="comment">% See if IFNy + toc or gef are significantly different from IFNy + veh</span>
+[resultsIFNy,~,~,gnamesIFNy] = multcompare(stats,<span class="string">"CriticalValueType"</span>,<span class="string">"dunnett"</span>,<span class="string">'ControlGroup'</span>,find(contains(stats.gnames,<span class="string">'IFNy + Veh'</span>)),<span class="string">'Display'</span>,<span class="string">'off'</span>);
+resultsTblIFNy = array2table(resultsIFNy,<span class="string">"VariableNames"</span>, [<span class="string">"Group"</span>,<span class="string">"Control Group"</span>,<span class="string">"Lower Limit"</span>,<span class="string">"Difference"</span>,<span class="string">"Upper Limit"</span>,<span class="string">"P-value"</span>]);
+resultsTblIFNy.(<span class="string">"Group"</span>) = gnamesIFNy(resultsTblIFNy.(<span class="string">"Group"</span>));
+resultsTblIFNy.(<span class="string">"Control Group"</span>) = gnamesIFNy(resultsTblIFNy.(<span class="string">"Control Group"</span>))
+</pre>
+<pre class="codeoutput">freqData =
+  12&times;5 table
+                    exptx       GroupCount    mean_freq    median_freq    sem_freq
+                  __________    __________    _________    ___________    ________
+    Veh + Veh     Veh + Veh         4           1.8178        1.7865      0.087244
+    Toc + Veh     Toc + Veh         4           1.8587        1.8202       0.05448
+    Gef + Veh     Gef + Veh         4          0.97993       0.95826       0.10301
+    IL6 + Veh     IL6 + Veh         4            5.138         5.114       0.40145
+    IL6 + Toc     IL6 + Toc         4           3.3611        3.5249       0.18836
+    IL6 + Gef     IL6 + Gef         4           2.7183        2.6966       0.46322
+    IL1b + Veh    IL1b + Veh        4           7.2737         7.069       0.51077
+    IL1b + Toc    IL1b + Toc        4           3.7343        3.7656       0.13301
+    IL1b + Gef    IL1b + Gef        4           2.0634        1.9839       0.10157
+    IFNy + Veh    IFNy + Veh        4           4.7552         4.512       0.49774
+    IFNy + Toc    IFNy + Toc        4           5.7713        5.7351       0.30603
+    IFNy + Gef    IFNy + Gef        4           2.1164        1.8491       0.64673
+resultsTblC =
+  11&times;6 table
+        Group         Control Group    Lower Limit    Difference    Upper Limit     P-value  
+    ______________    _____________    ___________    __________    ___________    __________
+    {'Toc + Veh' }    {'Veh + Veh'}      -1.3949       0.040931        1.4767               1
+    {'Gef + Veh' }    {'Veh + Veh'}      -2.2737       -0.83788       0.59792         0.49759
+    {'IL6 + Veh' }    {'Veh + Veh'}       1.8844         3.3202         4.756      1.4268e-06
+    {'IL6 + Toc' }    {'Veh + Veh'}      0.10754         1.5433        2.9791        0.029769
+    {'IL6 + Gef' }    {'Veh + Veh'}     -0.53532        0.90048        2.3363         0.41456
+    {'IL1b + Veh'}    {'Veh + Veh'}         4.02         5.4558        6.8916      1.6209e-14
+    {'IL1b + Toc'}    {'Veh + Veh'}      0.48073         1.9165        3.3523       0.0041655
+    {'IL1b + Gef'}    {'Veh + Veh'}      -1.1902        0.24559        1.6814         0.99968
+    {'IFNy + Veh'}    {'Veh + Veh'}       1.5016         2.9374        4.3732      7.7978e-06
+    {'IFNy + Toc'}    {'Veh + Veh'}       2.5176         3.9534        5.3892      8.9526e-08
+    {'IFNy + Gef'}    {'Veh + Veh'}      -1.1372        0.29855        1.7344          0.9982
+resultsTbl6 =
+  11&times;6 table
+        Group         Control Group    Lower Limit    Difference    Upper Limit     P-value  
+    ______________    _____________    ___________    __________    ___________    __________
+    {'Veh + Veh' }    {'IL6 + Veh'}      -4.7558        -3.3202       -1.8846      5.4193e-07
+    {'Toc + Veh' }    {'IL6 + Veh'}      -4.7149        -3.2793       -1.8437      3.2557e-06
+    {'Gef + Veh' }    {'IL6 + Veh'}      -5.5937        -4.1581       -2.7225      8.6395e-10
+    {'IL6 + Toc' }    {'IL6 + Veh'}      -3.2125        -1.7769      -0.34129       0.0089063
+    {'IL6 + Gef' }    {'IL6 + Veh'}      -3.8553        -2.4197      -0.98415      0.00024991
+    {'IL1b + Veh'}    {'IL6 + Veh'}      0.70004         2.1356        3.5712       0.0011449
+    {'IL1b + Toc'}    {'IL6 + Veh'}      -2.8393        -1.4037      0.031901        0.058073
+    {'IL1b + Gef'}    {'IL6 + Veh'}      -4.5102        -3.0746        -1.639       8.193e-06
+    {'IFNy + Veh'}    {'IL6 + Veh'}      -1.8184       -0.38282        1.0528         0.98747
+    {'IFNy + Toc'}    {'IL6 + Veh'}     -0.80236        0.63322        2.0688         0.78957
+    {'IFNy + Gef'}    {'IL6 + Veh'}      -4.4573        -3.0217       -1.5861      3.7228e-06
+resultsTbl1b =
+  11&times;6 table
+        Group         Control Group     Lower Limit    Difference    Upper Limit     P-value  
+    ______________    ______________    ___________    __________    ___________    __________
+    {'Veh + Veh' }    {'IL1b + Veh'}      -6.8915       -5.4558         -4.0202     4.3077e-14
+    {'Toc + Veh' }    {'IL1b + Veh'}      -6.8506       -5.4149         -3.9792     6.6391e-14
+    {'Gef + Veh' }    {'IL1b + Veh'}      -7.7294       -6.2937          -4.858              0
+    {'IL6 + Veh' }    {'IL1b + Veh'}      -3.5713       -2.1356        -0.69995      0.0011563
+    {'IL6 + Toc' }    {'IL1b + Veh'}      -5.3482       -3.9125         -2.4768     4.3568e-09
+    {'IL6 + Gef' }    {'IL1b + Veh'}       -5.991       -4.5554         -3.1197     2.9122e-11
+    {'IL1b + Toc'}    {'IL1b + Veh'}       -4.975       -3.5393         -2.1036     5.2674e-08
+    {'IL1b + Gef'}    {'IL1b + Veh'}      -6.6459       -5.2103         -3.7746     2.9166e-13
+    {'IFNy + Veh'}    {'IL1b + Veh'}      -3.9541       -2.5185         -1.0828     0.00010331
+    {'IFNy + Toc'}    {'IL1b + Veh'}      -2.9381       -1.5024       -0.066728       0.036325
+    {'IFNy + Gef'}    {'IL1b + Veh'}       -6.593       -5.1573         -3.7216     7.1952e-12
+resultsTblIFNy =
+  11&times;6 table
+        Group         Control Group     Lower Limit    Difference    Upper Limit     P-value  
+    ______________    ______________    ___________    __________    ___________    __________
+    {'Veh + Veh' }    {'IFNy + Veh'}       -4.373       -2.9374        -1.5018       6.478e-06
+    {'Toc + Veh' }    {'IFNy + Veh'}      -4.3321       -2.8965        -1.4608      2.5353e-05
+    {'Gef + Veh' }    {'IFNy + Veh'}      -5.2109       -3.7753        -2.3396      2.5039e-08
+    {'IL6 + Veh' }    {'IFNy + Veh'}      -1.0528       0.38282         1.8185         0.98748
+    {'IL6 + Toc' }    {'IFNy + Veh'}      -2.8297       -1.3941       0.041574        0.060729
+    {'IL6 + Gef' }    {'IFNy + Veh'}      -3.4725       -2.0369       -0.60128       0.0020659
+    {'IL1b + Veh'}    {'IFNy + Veh'}       1.0828        2.5185         3.9541      0.00010409
+    {'IL1b + Toc'}    {'IFNy + Veh'}      -2.4565       -1.0209        0.41477         0.27923
+    {'IL1b + Gef'}    {'IFNy + Veh'}      -4.1274       -2.6918        -1.2562      2.4861e-05
+    {'IFNy + Toc'}    {'IFNy + Veh'}     -0.41958         1.016         2.4517         0.28394
+    {'IFNy + Gef'}    {'IFNy + Veh'}      -4.0745       -2.6388        -1.2032      7.0506e-05
+</pre>
+<h2 id="4">Now plot Figure 5 A &amp; B to be appended with pSTAT3 stains</h2>
+<pre class="codeinput">
+<span class="comment">% make a figure</span>
+fig5 = figure;
+
+<span class="comment">% plot the cytokines that have increase in secretion by greater than 1.5 fold over vehicle</span>
+subplot(1,3,1)
+bar(categorical(cytoTable.Row(highDiff)),log2(cytoTable.Veh_IL1b_367(highDiff)-cytoTable.Veh_Veh_365(highDiff)),<span class="string">'FaceColor'</span>,[0.75,0.75,0.75],<span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1);
+
+barAx = gca;
+
+<span class="comment">% label the axes and give it a title</span>
+ylabel(<span class="string">'Log_2 Signal Intensity (Vehicle Subtracted)'</span>); xlabel(<span class="string">'Cytokines measured in supernatant'</span>);
+<span class="comment">% title('Cytokines with greater than 1.5x fold increased secretion after IL1b treatment');</span>
+
+<span class="comment">% fix the ticks</span>
+set(barAx,<span class="string">'TickLength'</span>,[0.02, 0.025],<span class="string">'LineWidth'</span>,1);
+ylim([0,15])
+
+<span class="comment">% Plot the spread frequency by treatment with vehicle, Tocilizumab, or Gefitinib co-treatment</span>
+subplot(1,3,2:3)
+sprdBar = bar(freqData.exptx,freqData.mean_freq, <span class="string">'FaceColor'</span>,<span class="string">'flat'</span>, <span class="string">'EdgeColor'</span>,<span class="string">'k'</span>, <span class="string">'LineWidth'</span>,1); <span class="comment">% plot the mean</span>
+<span class="comment">% plot the significance comparisons</span>
+ylim([0,11]); <span class="comment">% set the y limit</span>
+
+hold <span class="string">on</span>;
+swarmchart(data2.exptx,data2.freq,<span class="string">'XJitter'</span>,<span class="string">'randn'</span>,<span class="string">'YJitter'</span>,<span class="string">'none'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>,<span class="string">'MarkerFaceColor'</span>,[0.5,0.5,0.5]) <span class="comment">% plot the raw replicate data</span>
+errorbar(freqData.exptx,freqData.mean_freq,freqData.sem_freq,<span class="string">'.'</span>,<span class="string">'vertical'</span>,<span class="string">'Color'</span>,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>, 1,<span class="string">'MarkerSize'</span>, 1); <span class="comment">% plot SEM</span>
+plot(freqData.exptx,freqData.median_freq,<span class="string">'d'</span>,<span class="string">'MarkerFaceColor'</span>,<span class="string">'r'</span>,<span class="string">'MarkerEdgeColor'</span>,<span class="string">'k'</span>) <span class="comment">% ,'% plot median</span>
+
+<span class="comment">% plot significance lines</span>
+<span class="comment">% IL-6 + veh vs IL-6 + toc or IL-6 + gef</span>
+a = 6.75; b = 7.5; <span class="comment">% height of lines</span>
+plot(4:5, [a,a], <span class="string">'-k'</span>,4.5, a + 0.25, <span class="string">'*r'</span>); plot([4,4],[a-0.25,a],<span class="string">'-k'</span>); plot([5,5],[a-0.25,a],<span class="string">'-k'</span>) <span class="comment">% IL-6 + Veh vs IL-6 + Toc</span>
+plot(4:6, [b,b,b], <span class="string">'-k'</span>,5, b + 0.25, <span class="string">'*r'</span>); plot([4,4],[b-0.25,b],<span class="string">'-k'</span>); plot([6,6],[b-0.25,b],<span class="string">'-k'</span>) <span class="comment">% IL-6 + Veh vs IL-6 + gef</span>
+
+<span class="comment">% IL-1B + veh vs IL-1B + toc or IL-1B + gef</span>
+a = 9; b = 9.75; <span class="comment">% height of lines</span>
+plot(7:8, [a,a], <span class="string">'-k'</span>,7.5, a + 0.25, <span class="string">'*r'</span>); plot([7,7],[a-0.25,a],<span class="string">'-k'</span>); plot([8,8],[a-0.25,a],<span class="string">'-k'</span>)  <span class="comment">% IL-1b + Veh vs IL-1b + Toc</span>
+plot(7:9, [b,b,b], <span class="string">'-k'</span>,8, b + 0.25, <span class="string">'*r'</span>); plot([7,7],[b-0.25,b],<span class="string">'-k'</span>); plot([9,9],[b-0.25,b],<span class="string">'-k'</span>)  <span class="comment">% IL-1b + Veh vs IL-1b + gef</span>
+
+<span class="comment">% IFNy + veh vs IFNy + gef</span>
+b = 7.25; <span class="comment">% height of lines</span>
+plot(10:12, [b,b,b], <span class="string">'-k'</span>,11, b + 0.25, <span class="string">'*r'</span>); plot([10,10],[b-0.25,b],<span class="string">'-k'</span>); plot([12,12],[b-0.25,b],<span class="string">'-k'</span>)  <span class="comment">% ifn+ Veh vs ifn + gef</span>
+
+<span class="comment">% add axis labels and fix the ticks</span>
+ylabel(<span class="string">'SPREAD Frequency'</span>); xlabel(<span class="string">'Treatment'</span>)
+set(gca,<span class="string">'TickLength'</span>,[0.01, 0.025],<span class="string">'LineWidth'</span>,1);
+
+<span class="comment">% turn off the hold</span>
+hold <span class="string">off</span>;
+
+<span class="comment">% standardize the figure</span>
+fig5.Units = <span class="string">"inches"</span>; fig5.Renderer = <span class="string">'painters'</span>;
+fontname(fig5,<span class="string">"Arial"</span>); fontsize(fig5,8,<span class="string">"points"</span>);
+fig5.Position = [0.5,0.5,12,3];
+
+<span class="comment">% make the bars in B the right colors</span>
+sprdBar.CData(1:3:12,:) = repmat([0,        0.4470,  0.7410],[4,1]);
+sprdBar.CData(2:3:12,:) = repmat([0.4660,   0.6740,  0.1880],[4,1]);
+sprdBar.CData(3:3:12,:) = repmat([0.8500,   0.3250,  0.0980],[4,1]);
+</pre>
+<img vspace="5" hspace="5" src="SPREADS_F5_HBE1_SPREADs_Mechanism_01.png" alt=""> <h2 id="5">Save the Figure</h2>
+<pre class="codeinput">saveas(fig5,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F5_HBE1_SPREADs_Mechanism.fig'</span>)
+saveas(fig5,<span class="string">'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F5_HBE1_SPREADs_Mechanism.svg'</span>)
+
+<span class="comment">% open in affinity assuming DPI is 96.</span>
+</pre>
+<img vspace="5" hspace="5" src="SPREADS_F5_HBE1_SPREADs_Mechanism_02.png" alt=""> <h2 id="6">Figure 5 - C, D, E &amp; F - pSTAT3 IF Stains</h2>
+<p>All pSTAT3 stains that were done at the end of experiments are here: Z:\imageData\SPREADs\pSTAT3_Stains</p>
+<pre class="codeinput">
+<span class="comment">% All images in the figure comes from: 2022-11-10 HBE1 EKAREN4 Cyto Inhibs experiment</span>
+<span class="comment">% Vehicle example = xy</span>
+<span class="comment">% IL6 example = xy</span>
+<span class="comment">% IL1b example = xy 24</span>
+<span class="comment">% F is just E 4x'd and cropped to the squares</span>
+</pre>
+<h2 id="7">Figure Legend</h2>
+<p>Figure 5. Investigating the mechanism of cytokine-mediated SPREADs. (A) Vehicle-subtracted Log2 mean intensity of secreted cytokines in the supernatant of IL-1β treated HBE1 cells versus control. (B) SPREAD frequency of HBE1 cells co-treated with vehicle or pro-inflammatory conditions (indicated by labels under bars) plus vehicle, 10 ug/mL tocilizumab, or 1uM gefitinib (indicated by bar color). (C-E) pSTAT3 immunofluorescence (IF) stains of HBE1 cells after 24-hours treatment with vehicle, 20 ng/mL IL-6, or 20 ng/mL IL-1β. The nuclear marker is shown in blue with pSTAT3 shown in red. All image intensities are scaled similarly per channel. White boxes outline regions of high pSTAT3 activity in IL-1β treated cells. Representative images selected from 9 technical replicates across 3 independent experiments. Scale bars in panels C-E are 250 μm. (F) Enlarged images of clusters of pSTAT3 activation, identified in panel E by two white boxes. For panel F, the whole image in panel E was scaled 4x then cropped.</p>
+<p class="footer">
+<br>
+<a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2023b</a>
+<br>
+</p>
+</div>
+<!--
+##### SOURCE BEGIN #####
+%% Figure 5: Investigating the mechanism of cytokine induced spreads in HBE1 cells
+
+% add paths
+addpath('Z:\Code\Image Analysis\','Z:\Code\Cell Trace\','Z:\Code\Nick\')
+%% Figure 5A - Bar plot of cytokine array
+
+% Load the data from devans microarray
+MAdata = load('Z:\imageData\SPREADs\Cytokine_Secretion_Data\HBE 20220603\MLdata\MicroArrayData.mat');
+cytoTable = array2table(MAdata.A','VariableNames',MAdata.MemCond_rows','RowNames',string(MAdata.CytOrd_cols)');
+cytoTable=cytoTable(cytoTable.Row ~= "IL-1β",:);
+cytoTable=cytoTable(cytoTable.Row ~= "Negative Control",:);
+
+% pull the vehicle and il1b treated cells
+highDiff = (cytoTable.Veh_IL1b_367./cytoTable.Veh_Veh_365) >= 1.5; % get logical of cytokines >= 1.5 fold over vehicle
+
+%% Figure 5B - Inhibition of Cytokine Induced SPREADS by Gef (EGFRi) and Toc (anti-IL6R)
+
+% load a representative experimental replicate's SPREAD data
+dataloc = load('Z:\Processed Data\SPREADs\2022-11-10 HBE1 EKAREN4 Cyto Inhibs\2022-11-10 HBE1 EKAREN4 Cyto Inhibs_Processed.mat');
+dataloc = dataloc.dataloc; % pull out dataloc
+
+% Get the SPREAD data from it!
+data1 = convertSPREADToDataframe2(dataloc, 'EKAR', 'aftertx',2,'exclude',{'EGF'},'tmaxaftertx',24);
+
+% pull the single cytokine data
+no10 = ~contains(data1.txinfo,'10ng/mL'); % only need the 20ng/mL data
+data2 = data1(no10,:);
+
+% now give the treatments prettier names
+oldTxNames = {'1 fim 1 vehicle 1 vehicle', '1 fim 10ug/mL Tocilizumab 1 vehicle', '1 fim 1uM Gefitinib 1 vehicle',...
+              '1 fim 1 vehicle 20ng/mL IL6', '1 fim 10ug/mL Tocilizumab 20ng/mL IL6', '1 fim 1uM Gefitinib 20ng/mL IL6',...
+              '1 fim 1 vehicle 20ng/mL IL1b', '1 fim 10ug/mL Tocilizumab 20ng/mL IL1b', '1 fim 1uM Gefitinib 20ng/mL IL1b',...
+              '1 fim 1 vehicle 20ng/mL IFNy', '1 fim 10ug/mL Tocilizumab 20ng/mL IFNy', '1 fim 1uM Gefitinib 20ng/mL IFNy',...
+              };
+txNames = {'Veh + Veh','Toc + Veh','Gef + Veh',...
+           'IL6 + Veh','IL6 + Toc','IL6 + Gef',...
+           'IL1b + Veh','IL1b + Toc','IL1b + Gef',...
+           'IFNy + Veh','IFNy + Toc','IFNy + Gef',...
+           };
+data2.exptx = categorical(data2.txinfo,oldTxNames,txNames);
+
+% get the statistics for plotting
+freqData = grpstats(data2,"exptx",["mean","median","sem"],"DataVars","freq")
+
+% do the initial anova for the data
+[~,~,stats] = anova1(data2.freq,data2.exptx,'off');
+
+% See which are significantly different versus control (vehicle)
+[resultsC,~,~,gnamesC] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(stats.gnames,'Veh + Veh')),'Display','off'); 
+resultsTblC = array2table(resultsC,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblC.("Group") = gnamesC(resultsTblC.("Group"));
+resultsTblC.("Control Group") = gnamesC(resultsTblC.("Control Group"))
+
+% See if IL6 + toc or gef are significantly different from IL6 + veh
+[results6,~,~,gnames6] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(stats.gnames,'IL6 + Veh')),'Display','off'); 
+resultsTbl6 = array2table(results6,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTbl6.("Group") = gnames6(resultsTbl6.("Group"));
+resultsTbl6.("Control Group") = gnames6(resultsTbl6.("Control Group"))
+
+% See if IL1b + toc or gef are significantly different from IL1b + veh
+[results1b,~,~,gnames1b] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(stats.gnames,'IL1b + Veh')),'Display','off'); 
+resultsTbl1b = array2table(results1b,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTbl1b.("Group") = gnames1b(resultsTbl1b.("Group"));
+resultsTbl1b.("Control Group") = gnames1b(resultsTbl1b.("Control Group"))
+
+% See if IFNy + toc or gef are significantly different from IFNy + veh
+[resultsIFNy,~,~,gnamesIFNy] = multcompare(stats,"CriticalValueType","dunnett",'ControlGroup',find(contains(stats.gnames,'IFNy + Veh')),'Display','off'); 
+resultsTblIFNy = array2table(resultsIFNy,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblIFNy.("Group") = gnamesIFNy(resultsTblIFNy.("Group"));
+resultsTblIFNy.("Control Group") = gnamesIFNy(resultsTblIFNy.("Control Group"))
+
+%% Now plot Figure 5 A & B to be appended with pSTAT3 stains
+
+% make a figure
+fig5 = figure; 
+
+% plot the cytokines that have increase in secretion by greater than 1.5 fold over vehicle
+subplot(1,3,1)
+bar(categorical(cytoTable.Row(highDiff)),log2(cytoTable.Veh_IL1b_367(highDiff)-cytoTable.Veh_Veh_365(highDiff)),'FaceColor',[0.75,0.75,0.75],'EdgeColor','k', 'LineWidth',1);
+
+barAx = gca;
+
+% label the axes and give it a title
+ylabel('Log_2 Signal Intensity (Vehicle Subtracted)'); xlabel('Cytokines measured in supernatant');
+% title('Cytokines with greater than 1.5x fold increased secretion after IL1b treatment');
+
+% fix the ticks
+set(barAx,'TickLength',[0.02, 0.025],'LineWidth',1);
+ylim([0,15])
+
+% Plot the spread frequency by treatment with vehicle, Tocilizumab, or Gefitinib co-treatment
+subplot(1,3,2:3)
+sprdBar = bar(freqData.exptx,freqData.mean_freq, 'FaceColor','flat', 'EdgeColor','k', 'LineWidth',1); % plot the mean
+% plot the significance comparisons
+ylim([0,11]); % set the y limit
+
+hold on;
+swarmchart(data2.exptx,data2.freq,'XJitter','randn','YJitter','none','MarkerEdgeColor','k','MarkerFaceColor',[0.5,0.5,0.5]) % plot the raw replicate data
+errorbar(freqData.exptx,freqData.mean_freq,freqData.sem_freq,'.','vertical','Color','k','LineWidth', 1,'MarkerSize', 1); % plot SEM
+plot(freqData.exptx,freqData.median_freq,'d','MarkerFaceColor','r','MarkerEdgeColor','k') % ,'% plot median
+
+% plot significance lines
+% IL-6 + veh vs IL-6 + toc or IL-6 + gef 
+a = 6.75; b = 7.5; % height of lines 
+plot(4:5, [a,a], '-k',4.5, a + 0.25, '*r'); plot([4,4],[a-0.25,a],'-k'); plot([5,5],[a-0.25,a],'-k') % IL-6 + Veh vs IL-6 + Toc
+plot(4:6, [b,b,b], '-k',5, b + 0.25, '*r'); plot([4,4],[b-0.25,b],'-k'); plot([6,6],[b-0.25,b],'-k') % IL-6 + Veh vs IL-6 + gef
+
+% IL-1B + veh vs IL-1B + toc or IL-1B + gef 
+a = 9; b = 9.75; % height of lines
+plot(7:8, [a,a], '-k',7.5, a + 0.25, '*r'); plot([7,7],[a-0.25,a],'-k'); plot([8,8],[a-0.25,a],'-k')  % IL-1b + Veh vs IL-1b + Toc
+plot(7:9, [b,b,b], '-k',8, b + 0.25, '*r'); plot([7,7],[b-0.25,b],'-k'); plot([9,9],[b-0.25,b],'-k')  % IL-1b + Veh vs IL-1b + gef
+
+% IFNy + veh vs IFNy + gef
+b = 7.25; % height of lines
+plot(10:12, [b,b,b], '-k',11, b + 0.25, '*r'); plot([10,10],[b-0.25,b],'-k'); plot([12,12],[b-0.25,b],'-k')  % ifn+ Veh vs ifn + gef
+
+% add axis labels and fix the ticks
+ylabel('SPREAD Frequency'); xlabel('Treatment')
+set(gca,'TickLength',[0.01, 0.025],'LineWidth',1);
+
+% turn off the hold
+hold off;
+
+% standardize the figure 
+fig5.Units = "inches"; fig5.Renderer = 'painters';
+fontname(fig5,"Arial"); fontsize(fig5,8,"points");
+fig5.Position = [0.5,0.5,12,3];
+
+% make the bars in B the right colors
+sprdBar.CData(1:3:12,:) = repmat([0,        0.4470,  0.7410],[4,1]);
+sprdBar.CData(2:3:12,:) = repmat([0.4660,   0.6740,  0.1880],[4,1]);
+sprdBar.CData(3:3:12,:) = repmat([0.8500,   0.3250,  0.0980],[4,1]);
+
+%% Save the Figure
+saveas(fig5,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F5_HBE1_SPREADs_Mechanism.fig')
+saveas(fig5,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F5_HBE1_SPREADs_Mechanism.svg')
+
+% open in affinity assuming DPI is 96.
+
+%% Figure 5 - C, D, E & F - pSTAT3 IF Stains
+% All pSTAT3 stains that were done at the end of experiments are here:
+% Z:\imageData\SPREADs\pSTAT3_Stains
+
+% All images in the figure comes from: 2022-11-10 HBE1 EKAREN4 Cyto Inhibs experiment
+% Vehicle example = xy 
+% IL6 example = xy
+% IL1b example = xy 24
+% F is just E 4x'd and cropped to the squares
+
+%% Figure Legend
+% Figure 5. Investigating the mechanism of cytokine-mediated SPREADs. (A) Vehicle-subtracted 
+% Log2 mean intensity of secreted cytokines in the supernatant of IL-1β treated HBE1 cells 
+% versus control. (B) SPREAD frequency of HBE1 cells co-treated with vehicle or pro-inflammatory 
+% conditions (indicated by labels under bars) plus vehicle, 10 ug/mL tocilizumab, or 1uM gefitinib 
+% (indicated by bar color). (C-E) pSTAT3 immunofluorescence (IF) stains of HBE1 cells after 
+% 24-hours treatment with vehicle, 20 ng/mL IL-6, or 20 ng/mL IL-1β. The nuclear marker is shown 
+% in blue with pSTAT3 shown in red. All image intensities are scaled similarly per channel. 
+% White boxes outline regions of high pSTAT3 activity in IL-1β treated cells. Representative 
+% images selected from 9 technical replicates across 3 independent experiments. Scale bars in 
+% panels C-E are 250 μm. (F) Enlarged images of clusters of pSTAT3 activation, identified in 
+% panel E by two white boxes. For panel F, the whole image in panel E was scaled 4x then cropped.
+
+##### SOURCE END #####
+-->
+</body>
+</html>

@@ -1,0 +1,7 @@
+scale bar is 250uM
+from: 2022-11-03 pHBE ALI pt5 virus EKAREN4 Cytokines
+xy 25 (20ng/mL il1b treated at ~1.1hr from start) 6 min loop time
+Movie tps from start kept:
+82,85,87,88,92,109,117,139,148,152,169
+in hrs from start of movie:
+8.1,8.4,8.6,8.7,9.1,10.8,11.6,13.8,14.7,15.1,16.8

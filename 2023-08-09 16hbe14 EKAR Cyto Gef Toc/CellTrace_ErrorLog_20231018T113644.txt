@@ -1,0 +1,303 @@
+Error Log File for iman_celltracer, run 2023-10-18 11:36:44 for file: 
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\2023-08-09 16hbe14 EKAR Cyto Gef Toc.nd2
+
+
+Error 1
+In XY Position 35, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 2
+In XY Position 36, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 3
+In XY Position 37, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 4
+In XY Position 38, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 5
+In XY Position 39, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 6
+In XY Position 40, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 7
+In XY Position 41, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 8
+In XY Position 42, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 9
+In XY Position 43, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
+
+Error 10
+In XY Position 44, at Frame ??
+
+MATLAB:Java:GenericException - Java exception occurred: 
+java.io.IOException: An unexpected network error occurred
+	at sun.nio.ch.FileDispatcherImpl.pread0(Native Method)
+	at sun.nio.ch.FileDispatcherImpl.pread(FileDispatcherImpl.java:67)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:220)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.FileChannelImpl.readInternal(FileChannelImpl.java:735)
+	at sun.nio.ch.FileChannelImpl.read(FileChannelImpl.java:718)
+	at loci.common.NIOByteBufferProvider.allocateDirect(NIOByteBufferProvider.java:127)
+	at loci.common.NIOByteBufferProvider.allocate(NIOByteBufferProvider.java:112)
+	at loci.common.NIOFileHandle.buffer(NIOFileHandle.java:647)
+	at loci.common.NIOFileHandle.seek(NIOFileHandle.java:330)
+	at loci.common.RandomAccessInputStream.seek(RandomAccessInputStream.java:203)
+	at loci.formats.in.NativeND2Reader.openBytes(NativeND2Reader.java:233)
+	at loci.formats.DelegateReader.openBytes(DelegateReader.java:227)
+	at loci.formats.ImageReader.openBytes(ImageReader.java:465)
+	at loci.formats.ChannelFiller.openBytes(ChannelFiller.java:156)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:229)
+	at loci.formats.ChannelSeparator.openBytes(ChannelSeparator.java:161)
+	at loci.formats.ReaderWrapper.openBytes(ReaderWrapper.java:334)
+\\albecklab.mcb.ucdavis.edu\data\bfmatlab\bfGetPlane.m  - Line 78
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 389
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\ImageAccess.m  - Line 359
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_xyshift.m  - Line 103
+\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\iman_celltracer.m  - Line 403
+\\albecklab.mcb.ucdavis.edu\data\imageData\SPREADs\2023-08-09 16hbe14 EKAR Cyto Gef Toc\celltracer_v2_2023_08_09_16HBE_EKAR.m  - Line 233
