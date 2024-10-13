@@ -16,7 +16,7 @@
 % Combine Multiple SPREAD experiment's +/- INS and +/- 2-DG experiments
 
 % add paths
-addpath('Z:\Code\Image Analysis\','Z:\Code\Cell Trace\','Z:\Code\Nick\')
+addpath('Z:\Code\Image Analysis\','Z:\Code\Cell Trace\','Z:\Code\DatalocHandler\')
 
 % Base path
 baseP = 'Z:\Processed Data\SPREADs\';
@@ -145,8 +145,66 @@ fontname(figgy,"Arial"); fontsize(figgy,8,"points") % make the font 8 pt and ari
 figgy.Position = [0.5,0.5,8.5,3];
 ax = gca;
 ax.Units = "inches";
-ax.Position = [1.1,0.56,3,2]
+ax.Position = [1.1,0.56,3,2];
 
 saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6C_Cyto_HC.fig')
 saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\F6C_Cyto_HC.svg')
+
+close(figgy)
+
+%% Load the ampk data from 2 of the experiments, but process them separately due to baseline differences
+dataloc = [];
+dataloc{1} = load([baseP,'2021-08-18 HBE1 AE Cyto INS 2DG OLI\2021-08-18 HBE1 AE Cyto INS 2DG OLI_Processed.mat']);
+dataloc{2} = load([baseP,'2021-08-18 HBE1 AE Cyto INS 2DG OLI\2021-08-18 HBE1 AE Cyto INS 2DG OLI_Processed.mat']);
+dataloc{1} = dataloc.dataloc;
+
+%% Get mean AMPK signal
+[paDFa]= convertPulseToDataframe(dataloc,{'AMPKAR'},'aftertx',2,'tmaxaftertx',24,'pulsepars','Mean_Aftertx'); % 
+
+%% Rename
+pat = optionalPattern(" ") + "at hour " + optionalPattern("+"|"-") + digitsPattern(1,2) + optionalPattern(" and"); % erase the "at hour +/- number
+paDFa.tx = erase(paDFa.treatment,pat);
+
+paDFb = paDFa(matches(paDFa.tx,"1 NOINS 1 vehicle 1 vehicle"|"1 fim 1 vehicle 1 vehicle"|"1 fim 1 vehicle 10mM TwoDG"),:);
+paDFb.tx = categorical(paDFb.tx,{'1 NOINS 1 vehicle 1 vehicle','1 fim 1 vehicle 1 vehicle','1 fim 1 vehicle 10mM TwoDG'},{'No Insulin','Plus Insulin','Glycolysis Inhibitor'});
+
+%% Do statistics 
+% 24 hrs
+figE7Stats24 = grpstats(paDFb,"tx",["mean","median","sem"],"DataVars","AMPKAR_Mean_Aftertx")
+[~,~,stats24] = anova1(paDFb.AMPKAR_Mean_Aftertx,paDFb.tx,'off');
+
+% See which are significantly different versus control (+ ins)
+[resultsC24,~,~,gnamesC24] = multcompare(stats24,"CriticalValueType","dunnett",'ControlGroup',find(matches(stats24.gnames,'No Insulin')),'Display','off','Approximate',false); 
+resultsTblC24 = array2table(resultsC24,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblC24.("Group") = gnamesC24(resultsTblC24.("Group"));
+resultsTblC24.("Control Group") = gnamesC24(resultsTblC24.("Control Group"))
+
+[resultsC24,~,~,gnamesC24] = multcompare(stats24,"CriticalValueType","dunnett",'ControlGroup',find(matches(stats24.gnames,'Plus Insulin')),'Display','off','Approximate',false); 
+resultsTblC24 = array2table(resultsC24,"VariableNames", ["Group","Control Group","Lower Limit","Difference","Upper Limit","P-value"]);
+resultsTblC24.("Group") = gnamesC24(resultsTblC24.("Group"));
+resultsTblC24.("Control Group") = gnamesC24(resultsTblC24.("Control Group"))
+
+%% Box and Whisker plot of AMPK Signal
+figgy = figure;
+
+boxchart(paDFb.tx,paDFb.AMPKAR_Mean_Aftertx,'Notch','on','MarkerStyle','none','BoxWidth',0.7)
+ylabel('Mean single cell AMPK signal after treatment')
+%ylim([0.31,0.63]);
+hold on;
+% Draw a black line with red asterisk to show significance
+plot(1:2, [0.535,0.535], '-k',1.5, 0.545, '*r','LineWidth',1) 
+plot(2:3, [0.61,0.61], '-k',2.5, 0.62, '*r','LineWidth',1) 
+hold off;
+ax=gca;
+xlabel('Treatment');
+
+figgy.Units = "inches";
+fontname(figgy,"Arial"); fontsize(figgy,8,"points") % make the font 8 pt and arial 
+figgy.Position = [0.5, 0.5, 8, 4];
+ax.Position = [0.2,0.1,0.5,0.8];
+
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\E9D_AMPK_Signal_Box_Plot.fig')
+saveas(figgy,'Z:\imageData\SPREADs\Plotting_Code\Figure_Outputs\E9D_AMPK_Signal_Box_Plot.svg')
+
+close(figgy)
 

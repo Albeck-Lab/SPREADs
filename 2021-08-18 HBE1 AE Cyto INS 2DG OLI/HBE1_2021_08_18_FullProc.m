@@ -1,5 +1,5 @@
 % hbe1 submerged with erktr and AMPKAR with cytokines with stat3 stains and 2dg or oligo 2nd treatment
-addpath('\\albecklab.mcb.ucdavis.edu\data\Code\Nick','\\albecklab.mcb.ucdavis.edu\data\Code\Image Analysis\','\\albecklab.mcb.ucdavis.edu\data\Code\Cell Trace\')
+addpath('Z:\Code\Nick','Z:\Code\Image Analysis\','Z:\Code\Cell Trace\')
 
 %% load call
 %dataloc = DatalocHandler();
@@ -26,7 +26,9 @@ plot_by_ND('treatment', dataloc, 'plottype', {'sorted heatmap'},'channel', 'ERKT
 
 %% Pulse Analysis
 pfts(1).t = 'Max'; pfts(1).c = 'dur'; pfts(1).p = 60; %I've never seen a real pulse last more than 6 hours...
-dataloc = DatalocHandler('dataloc',dataloc,'pulseanalysis',{'ERKTR'},'pulsefts',pfts,'saveit',false);
+dataloc = DatalocHandler('dataloc',dataloc,'pulseanalysis',{'AMPKAR'},'pulsefts',pfts);
+dataloc = DatalocHandler('dataloc',dataloc,'pulseanalysis',{'ERKTR'},'pulsefts',pfts);
+
 
 %% Arcos analysis
 sprdChan = 'ERKTR';
